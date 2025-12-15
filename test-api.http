@@ -1,0 +1,108 @@
+### 博客分析API测试文件
+
+### 1. 健康检查
+GET http://localhost:8080/api/analytics/health
+
+### 2. API信息
+GET http://localhost:8080/api/analytics/info
+
+### 3. 记录页面访问
+POST http://localhost:8080/api/analytics/visit
+Content-Type: application/json
+
+{
+  "pageUrl": "/posts/java-tutorial",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "referer": "https://google.com"
+}
+
+### 4. 记录首页访问
+POST http://localhost:8080/api/analytics/visit
+Content-Type: application/json
+
+{
+  "pageUrl": "/",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "referer": "https://baidu.com"
+}
+
+### 5. 记录博客文章访问
+POST http://localhost:8080/api/analytics/visit
+Content-Type: application/json
+
+{
+  "pageUrl": "/posts/spring-boot-guide",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "referer": "https://github.com"
+}
+
+### 6. 记录移动端访问
+POST http://localhost:8080/api/analytics/visit
+Content-Type: application/json
+
+{
+  "pageUrl": "/posts/react-tutorial",
+  "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1",
+  "referer": "https://twitter.com"
+}
+
+### 7. 获取今日统计
+GET http://localhost:8080/api/analytics/stats/today
+
+### 8. 获取实时统计
+GET http://localhost:8080/api/analytics/stats/realtime
+
+### 9. 获取热门页面（最近7天，前10个）
+GET http://localhost:8080/api/analytics/stats/hot-pages?days=7&limit=10
+
+### 10. 获取日期范围统计
+GET http://localhost:8080/api/analytics/stats/range?startDate=2025-12-10&endDate=2025-12-12
+
+### 11. 获取小时统计（今天）
+GET http://localhost:8080/api/analytics/stats/hourly?date=2025-12-12
+
+### 12. 获取浏览器统计（今天）
+GET http://localhost:8080/api/analytics/stats/browser?date=2025-12-12
+
+### 13. 获取操作系统统计（今天）
+GET http://localhost:8080/api/analytics/stats/os?date=2025-12-12
+
+### 14. 获取来源统计
+GET http://localhost:8080/api/analytics/stats/referer?days=7&limit=10
+
+### 15. 获取页面统计
+GET http://localhost:8080/api/analytics/stats/page?pageUrl=/posts/java-tutorial&days=7
+
+### 16. 获取地域统计
+GET http://localhost:8080/api/analytics/stats/region?days=7&limit=10
+
+### 批量测试脚本（可以复制这些多次执行）
+### 连续发送多个访问记录
+POST http://localhost:8080/api/analytics/visit
+Content-Type: application/json
+
+{
+  "pageUrl": "/posts/vue-tutorial",
+  "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "referer": "https://stackoverflow.com"
+}
+
+###
+POST http://localhost:8080/api/analytics/visit
+Content-Type: application/json
+
+{
+  "pageUrl": "/about",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0",
+  "referer": ""
+}
+
+###
+POST http://localhost:8080/api/analytics/visit
+Content-Type: application/json
+
+{
+  "pageUrl": "/contact",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15",
+  "referer": "https://localhost:8080"
+}

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blog.analytics.mapper.VisitRecordMapper">
+
+    <!-- 获取指定日期的访问统计 -->
+    <select id="getDailyStats" resultType="map">
+        SELECT
+            COUNT(*) as totalVisits,
+            COUNT(DISTINCT ip_address) as uniqueIps,
+            COUNT(*) as pageViews
+        FROM visit_record
+        WHERE date_key = #{dateKey}
+        AND deleted = 0
+    </select>
+
+    <!-- 获取指定日期范围的访问统计 -->
+    <select id="getRangeStats" resultType="map">
+        SELECT
+            date_key as dateKey,
+            COUNT(*) as totalVisits,
+            COUNT(DISTINCT ip_address) as uniqueIps,
+            COUNT(*) as pageViews
+        FROM visit_record
+        WHERE date_key BETWEEN #{startDate} AND #{endDate}
+        AND deleted = 0
+        GROUP BY date_key
+        ORDER BY date_key
+    </select>
+
+    <!-- 获取热门页面统计 -->
+    <select id="getHotPages" resultType="map">
+        SELECT
+            page_url as pageUrl,
+            page_title as pageTitle,
+            COUNT(*) as visitCount,
+            COUNT(DISTINCT ip_address) as uniqueIpCount
+        FROM visit_record
+        WHERE date_key BETWEEN #{startDate} AND #{endDate}
+        AND deleted = 0
+        GROUP BY page_url, page_title
+        ORDER BY visitCount DESC
+        LIMIT #{limit}
+    </select>
+
+    <!-- 获取实时统计（最近一小时） -->
+    <select id="getRealtimeStats" resultType="map">
+        SELECT
+            COUNT(*) as visitCount,
+            COUNT(DISTINCT ip_address) as uniqueIps
+        FROM visit_record
+        WHERE visit_time >= #{startTime}
+        AND deleted = 0
+    </select>
+
+    <!-- 获取小时统计 -->
+    <select id="getHourlyStats" resultType="map">
+        SELECT
+            hour_key as hourKey,
+            COUNT(*) as visitCount,
+            COUNT(DISTINCT ip_address) as uniqueIpCount
+        FROM visit_record
+        WHERE date_key = #{dateKey}
+        AND deleted = 0
+        GROUP BY hour_key
+        ORDER BY hour_key
+    </select>
+
+    <!-- 删除过期记录 -->
+    <delete id="deleteExpiredRecords">
+        DELETE FROM visit_record
+        WHERE visit_time &lt; #{expireTime}
+    </delete>
+
+    <!-- 获取独立IP数 -->
+    <select id="getUniqueIpCount" resultType="java.lang.Long">
+        SELECT COUNT(DISTINCT ip_address)
+        FROM visit_record
+        WHERE date_key = #{dateKey}
+        AND deleted = 0
+    </select>
+
+    <!-- 获取指定日期的页面统计 -->
+    <select id="getPageStats" resultType="map">
+        SELECT
+            page_url as pageUrl,
+            page_title as pageTitle,
+            COUNT(*) as visitCount,
+            COUNT(DISTINCT ip_address) as uniqueIpCount,
+            AVG(0) as avgDuration
+        FROM visit_record
+        WHERE date_key = #{dateKey}
+        AND deleted = 0
+        GROUP BY page_url, page_title
+        ORDER BY visitCount DESC
+    </select>
+
+    <!-- 获取指定URL和日期范围的页面统计 -->
+    <select id="getDailyPageStats" resultType="map">
+        SELECT
+            date_key as dateKey,
+            COUNT(*) as visitCount,
+            COUNT(DISTINCT ip_address) as uniqueIpCount
+        FROM visit_record
+        WHERE page_url = #{pageUrl}
+        AND date_key BETWEEN #{startDate} AND #{endDate}
+        AND deleted = 0
+        GROUP BY date_key
+        ORDER BY date_key
+    </select>
+
+    <!-- 获取地域统计 -->
+    <select id="getRegionStats" resultType="map">
+        SELECT
+            ip_address as ipAddress,
+            COUNT(*) as visitCount,
+            MAX(visit_time) as lastVisitTime
+        FROM visit_record
+        WHERE date_key BETWEEN #{startDate} AND #{endDate}
+        AND deleted = 0
+        GROUP BY ip_address
+        ORDER BY visitCount DESC
+        LIMIT #{limit}
+    </select>
+
+    <!-- 获取浏览器统计 -->
+    <select id="getBrowserStats" resultType="map">
+        SELECT
+            CASE
+                WHEN user_agent LIKE '%Chrome%' AND user_agent NOT LIKE '%Edge%' THEN 'Chrome'
+                WHEN user_agent LIKE '%Firefox%' THEN 'Firefox'
+                WHEN user_agent LIKE '%Safari%' AND user_agent NOT LIKE '%Chrome%' THEN 'Safari'
+                WHEN user_agent LIKE '%Edge%' THEN 'Edge'
+                WHEN user_agent LIKE '%Opera%' OR user_agent LIKE '%OPR%' THEN 'Opera'
+                WHEN user_agent LIKE '%MSIE%' OR user_agent LIKE '%Trident%' THEN 'Internet Explorer'
+                WHEN user_agent LIKE '%MicroMessenger%' THEN 'WeChat'
+                ELSE 'Other'
+            END as browser,
+            COUNT(*) as visitCount,
+            COUNT(DISTINCT ip_address) as uniqueIpCount
+        FROM visit_record
+        WHERE date_key = #{dateKey}
+        AND deleted = 0
+        AND user_agent IS NOT NULL
+        GROUP BY
+            CASE
+                WHEN user_agent LIKE '%Chrome%' AND user_agent NOT LIKE '%Edge%' THEN 'Chrome'
+                WHEN user_agent LIKE '%Firefox%' THEN 'Firefox'
+                WHEN user_agent LIKE '%Safari%' AND user_agent NOT LIKE '%Chrome%' THEN 'Safari'
+                WHEN user_agent LIKE '%Edge%' THEN 'Edge'
+                WHEN user_agent LIKE '%Opera%' OR user_agent LIKE '%OPR%' THEN 'Opera'
+                WHEN user_agent LIKE '%MSIE%' OR user_agent LIKE '%Trident%' THEN 'Internet Explorer'
+                WHEN user_agent LIKE '%MicroMessenger%' THEN 'WeChat'
+                ELSE 'Other'
+            END
+        ORDER BY visitCount DESC
+    </select>
+
+    <!-- 获取操作系统统计 -->
+    <select id="getOSStats" resultType="map">
+        SELECT
+            CASE
+                WHEN user_agent LIKE '%Windows NT 10%' THEN 'Windows 10'
+                WHEN user_agent LIKE '%Windows NT 6.3%' THEN 'Windows 8.1'
+                WHEN user_agent LIKE '%Windows NT 6.2%' THEN 'Windows 8'
+                WHEN user_agent LIKE '%Windows NT 6.1%' THEN 'Windows 7'
+                WHEN user_agent LIKE '%Windows NT%' THEN 'Windows'
+                WHEN user_agent LIKE '%Mac OS X%' THEN 'macOS'
+                WHEN user_agent LIKE '%iPhone OS%' OR user_agent LIKE '%iPad%' THEN 'iOS'
+                WHEN user_agent LIKE '%Android%' THEN 'Android'
+                WHEN user_agent LIKE '%Linux%' THEN 'Linux'
+                ELSE 'Other'
+            END as os,
+            COUNT(*) as visitCount,
+            COUNT(DISTINCT ip_address) as uniqueIpCount
+        FROM visit_record
+        WHERE date_key = #{dateKey}
+        AND deleted = 0
+        AND user_agent IS NOT NULL
+        GROUP BY
+            CASE
+                WHEN user_agent LIKE '%Windows NT 10%' THEN 'Windows 10'
+                WHEN user_agent LIKE '%Windows NT 6.3%' THEN 'Windows 8.1'
+                WHEN user_agent LIKE '%Windows NT 6.2%' THEN 'Windows 8'
+                WHEN user_agent LIKE '%Windows NT 6.1%' THEN 'Windows 7'
+                WHEN user_agent LIKE '%Windows NT%' THEN 'Windows'
+                WHEN user_agent LIKE '%Mac OS X%' THEN 'macOS'
+                WHEN user_agent LIKE '%iPhone OS%' OR user_agent LIKE '%iPad%' THEN 'iOS'
+                WHEN user_agent LIKE '%Android%' THEN 'Android'
+                WHEN user_agent LIKE '%Linux%' THEN 'Linux'
+                ELSE 'Other'
+            END
+        ORDER BY visitCount DESC
+    </select>
+
+    <!-- 获取访问来源统计 -->
+    <select id="getRefererStats" resultType="map">
+        SELECT
+            CASE
+                WHEN referer IS NULL OR referer = '' THEN 'Direct'
+                WHEN referer LIKE '%google%' THEN 'Google'
+                WHEN referer LIKE '%baidu%' THEN 'Baidu'
+                WHEN referer LIKE '%bing%' THEN 'Bing'
+                WHEN referer LIKE '%yahoo%' THEN 'Yahoo'
+                WHEN referer LIKE '%sogou%' THEN 'Sogou'
+                WHEN referer LIKE '%so%' THEN '360'
+                ELSE 'Other'
+            END as refererDomain,
+            referer as refererUrl,
+            COUNT(*) as visitCount,
+            COUNT(DISTINCT ip_address) as uniqueIpCount
+        FROM visit_record
+        WHERE date_key BETWEEN #{startDate} AND #{endDate}
+        AND deleted = 0
+        GROUP BY
+            CASE
+                WHEN referer IS NULL OR referer = '' THEN 'Direct'
+                WHEN referer LIKE '%google%' THEN 'Google'
+                WHEN referer LIKE '%baidu%' THEN 'Baidu'
+                WHEN referer LIKE '%bing%' THEN 'Bing'
+                WHEN referer LIKE '%yahoo%' THEN 'Yahoo'
+                WHEN referer LIKE '%sogou%' THEN 'Sogou'
+                WHEN referer LIKE '%so%' THEN '360'
+                ELSE 'Other'
+            END,
+            referer
+        ORDER BY visitCount DESC
+        LIMIT #{limit}
+    </select>
+
+</mapper>
