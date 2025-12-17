@@ -91,7 +91,7 @@ java -jar target/blog-analytics-1.0.0.jar
 应该看到类似以下输出：
 ```
 Starting BlogAnalyticsApplication on ...
-Started BlogAnalyticsApplication on port 8080
+Started BlogAnalyticsApplication on port 9050
 ```
 
 ### 健康检查
@@ -99,15 +99,15 @@ Started BlogAnalyticsApplication on port 8080
 
 ```bash
 # 健康检查（应该返回成功状态）
-curl http://localhost:8080/api/analytics/health
+curl http://localhost:9050/api/analytics/health
 
 # API信息（应该返回API列表）
-curl http://localhost:8080/api/analytics/info
+curl http://localhost:9050/api/analytics/info
 ```
 
 ### 浏览器访问
-- 健康检查: http://localhost:8080/api/analytics/health
-- API信息: http://localhost:8080/api/analytics/info
+- 健康检查: http://localhost:9050/api/analytics/health
+- API信息: http://localhost:9050/api/analytics/info
 
 ## 6. 功能测试
 
@@ -119,27 +119,27 @@ curl http://localhost:8080/api/analytics/info
 ### 使用curl测试
 ```bash
 # 测试记录访问
-curl -X POST http://localhost:8080/api/analytics/visit \
+curl -X POST http://localhost:9050/api/analytics/visit \
   -H "Content-Type: application/json" \
   -d '{"pageUrl":"/test","userAgent":"test-agent","referer":"direct"}'
 
 # 测试获取今日统计
-curl http://localhost:8080/api/analytics/stats/today
+curl http://localhost:9050/api/analytics/stats/today
 
 # 测试获取实时统计
-curl http://localhost:8080/api/analytics/stats/realtime
+curl http://localhost:9050/api/analytics/stats/realtime
 ```
 
 ## 7. 常见问题排查
 
 ### 端口占用
-如果8080端口被占用：
+如果9050端口被占用：
 ```bash
 # Windows
-netstat -ano | findstr :8080
+netstat -ano | findstr :9050
 
 # Linux/Mac
-lsof -i :8080
+lsof -i :9050
 ```
 
 ### 数据库连接失败
@@ -194,7 +194,7 @@ GET blog:analytics:visit:count:20251212
 ### 压力测试（可选）
 ```bash
 # 使用ab工具进行简单压力测试
-ab -n 1000 -c 10 http://localhost:8080/api/analytics/health
+ab -n 1000 -c 10 http://localhost:9050/api/analytics/health
 ```
 
 ### 内存和CPU监控

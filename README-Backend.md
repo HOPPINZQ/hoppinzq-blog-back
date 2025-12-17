@@ -86,13 +86,13 @@ mvn clean package
 java -jar target/blog-analytics-1.0.0.jar
 ```
 
-应用将在 `http://localhost:8080` 启动。
+应用将在 `http://localhost:9050` 启动。
 
 ## API接口文档
 
 ### 基础信息
 
-- **Base URL**: `http://localhost:8080/api/analytics`
+- **Base URL**: `http://localhost:9050/api/analytics`
 - **Content-Type**: `application/json`
 
 ### 主要接口
@@ -165,7 +165,7 @@ GET /api/analytics/stats/hourly?date=2025-12-12
 
 ```javascript
 class BlogAnalytics {
-    constructor(apiUrl = 'http://localhost:8080') {
+    constructor(apiUrl = 'http://localhost:9050') {
         this.apiUrl = apiUrl;
         this.init();
     }
@@ -249,7 +249,7 @@ function AnalyticsTracker() {
 
     useEffect(() => {
         const trackVisit = () => {
-            fetch('http://localhost:8080/api/analytics/visit', {
+            fetch('http://localhost:9050/api/analytics/visit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -286,7 +286,7 @@ FROM openjdk:8-jre-slim
 WORKDIR /app
 COPY target/blog-analytics-1.0.0.jar app.jar
 
-EXPOSE 8080
+EXPOSE 9050
 ENTRYPOINT ["java", "-jar", "app.jar"]
 ```
 
@@ -299,7 +299,7 @@ docker build -t blog-analytics .
 # 运行容器
 docker run -d \
   --name blog-analytics \
-  -p 8080:8080 \
+  -p 9050:9050 \
   -e DB_HOST=localhost \
   -e DB_USERNAME=root \
   -e DB_PASSWORD=password \

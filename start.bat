@@ -31,15 +31,15 @@ if %errorlevel% neq 0 (
 
 echo.
 echo Starting application...
-echo Application will be available at: http://localhost:8080
-echo API documentation: http://localhost:8080/api/analytics/info
-echo Health check: http://localhost:8080/api/analytics/health
-echo Swagger UI: http://localhost:8080/swagger-ui/
-echo API JSON: http://localhost:8080/v2/api-docs
+echo Application will be available at: http://localhost:9050
+echo API documentation: http://localhost:9050/api/analytics/info
+echo Health check: http://localhost:9050/api/analytics/health
+echo Swagger UI: http://localhost:9050/swagger-ui/
+echo API JSON: http://localhost:9050/v2/api-docs
 echo.
 echo Press Ctrl+C to stop the server
 echo.
 
-java -jar target/blog-analytics-1.0.0.jar
+java -jar target/hoppinzq-blog-back-1.0.0-SNAPSHOT.jar
 
 pause

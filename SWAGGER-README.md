@@ -8,8 +8,8 @@
 
 启动应用后，可以通过以下地址访问Swagger文档：
 
-- **Swagger UI**: http://localhost:8080/swagger-ui/
-- **API JSON**: http://localhost:8080/v2/api-docs
+- **Swagger UI**: http://localhost:9050/swagger-ui/
+- **API JSON**: http://localhost:9050/v2/api-docs
 
 ## 主要功能
 
@@ -178,7 +178,7 @@ springfox:
 
 ### Swagger UI无法访问
 1. 确认应用已正常启动
-2. 检查端口配置（默认8080）
+2. 检查端口配置（默认9050）
 3. 确认Swagger依赖已正确引入
 
 ### API文档不显示

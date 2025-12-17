@@ -659,7 +659,7 @@ public class ApiResponse<T> {
 
 ```yaml
 server:
-  port: 8080
+  port: 9050
 
 spring:
   application:
@@ -810,7 +810,7 @@ class BlogAnalytics {
 
 // 初始化
 export const analytics = new BlogAnalytics(
-    import.meta.env.PUBLIC_ANALYTICS_API || 'http://localhost:8080'
+    import.meta.env.PUBLIC_ANALYTICS_API || 'http://localhost:9050'
 );
 ```
 

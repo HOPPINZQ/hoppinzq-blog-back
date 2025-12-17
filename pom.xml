@@ -13,9 +13,9 @@
     </parent>
 
     <groupId>com.blog</groupId>
-    <artifactId>blog-analytics</artifactId>
-    <version>1.0.0</version>
-    <name>blog-analytics</name>
+    <artifactId>hoppinzq-blog-back</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>hoppinzq-blog-back</name>
     <description>博客访问统计后端服务</description>
 
     <properties>
@@ -86,6 +86,17 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okio</groupId>
+            <artifactId>okio</artifactId>
+            <version>3.9.0</version>
         </dependency>
 
   
