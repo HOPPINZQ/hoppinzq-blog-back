@@ -33,7 +33,7 @@ public class ProxyController {
      * 获取新闻热搜代理接口
      */
     @GetMapping("/news/hot-list")
-    public ResponseEntity<HoppinResponse<Object>> getNewsHotList(@RequestParam(required = false) Map<String, String> params) {
+    public HoppinResponse<Object> getNewsHotList(@RequestParam(required = false) Map<String, String> params) {
         try {
             // 构建请求URL
             StringBuilder urlBuilder = new StringBuilder("https://soso-b-api.cqttech.com/api/v1/hot_list");
@@ -58,13 +58,13 @@ public class ProxyController {
                 String responseBody = response.body().string();
                 // 直接返回响应内容
                 Object result = com.alibaba.fastjson.JSON.parse(responseBody);
-                return ResponseEntity.ok(HoppinResponse.success(result));
+                return HoppinResponse.success(result);
             } else {
-                return ResponseEntity.ok(HoppinResponse.fail("获取新闻热搜失败: " + response.message()));
+                return HoppinResponse.fail("获取新闻热搜失败: " + response.message());
             }
         } catch (IOException e) {
             log.error("获取新闻热搜失败", e);
-            return ResponseEntity.ok(HoppinResponse.fail("获取新闻热搜失败: " + e.getMessage()));
+            return HoppinResponse.fail("获取新闻热搜失败: " + e.getMessage());
         }
     }
 
@@ -72,7 +72,7 @@ public class ProxyController {
      * 获取天气代理接口
      */
     @GetMapping("/weather")
-    public ResponseEntity<HoppinResponse<Object>> getWeather(@RequestParam(required = false) Map<String, String> params) {
+    public HoppinResponse<Object> getWeather(@RequestParam(required = false) Map<String, String> params) {
         try {
             // 构建请求URL
             StringBuilder urlBuilder = new StringBuilder("https://userweatherapi-newtabpro.newtabpro.cn/api/GetAssistData");
@@ -97,13 +97,13 @@ public class ProxyController {
                 String responseBody = response.body().string();
                 // 直接返回响应内容
                 Object result = com.alibaba.fastjson.JSON.parse(responseBody);
-                return ResponseEntity.ok(HoppinResponse.success(result));
+                return HoppinResponse.success(result);
             } else {
-                return ResponseEntity.ok(HoppinResponse.fail("获取天气失败: " + response.message()));
+                return HoppinResponse.fail("获取天气失败: " + response.message());
             }
         } catch (IOException e) {
             log.error("获取天气失败", e);
-            return ResponseEntity.ok(HoppinResponse.fail("获取天气失败: " + e.getMessage()));
+            return HoppinResponse.fail("获取天气失败: " + e.getMessage());
         }
     }
 
@@ -111,7 +111,7 @@ public class ProxyController {
      * 获取星座运势代理接口
      */
     @GetMapping("/horoscope")
-    public ResponseEntity<HoppinResponse<Object>> getHoroscope(@RequestParam(required = false) Map<String, String> params) {
+    public HoppinResponse<Object> getHoroscope(@RequestParam(required = false) Map<String, String> params) {
         try {
             // 构建请求URL
             StringBuilder urlBuilder = new StringBuilder("https://userapi-newtabpro.newtabpro.cn/getxzinfo");
@@ -136,13 +136,91 @@ public class ProxyController {
                 String responseBody = response.body().string();
                 // 直接返回响应内容
                 Object result = com.alibaba.fastjson.JSON.parse(responseBody);
-                return ResponseEntity.ok(HoppinResponse.success(result));
+                return HoppinResponse.success(result);
             } else {
-                return ResponseEntity.ok(HoppinResponse.fail("获取星座运势失败: " + response.message()));
+                return HoppinResponse.fail("获取星座运势失败: " + response.message());
             }
         } catch (IOException e) {
             log.error("获取星座运势失败", e);
-            return ResponseEntity.ok(HoppinResponse.fail("获取星座运势失败: " + e.getMessage()));
+            return HoppinResponse.fail("获取星座运势失败: " + e.getMessage());
+        }
+    }
+
+    /**
+     * 获取大模型排名代理接口
+     */
+    @GetMapping("/hellogithub/lm-rank")
+    public HoppinResponse<Object> getLmRank(@RequestParam(required = false) Map<String, String> params) {
+        try {
+            // 构建请求URL
+            StringBuilder urlBuilder = new StringBuilder("https://hellogithub.com/_next/data/JdGrOpd-mbD4CLgVF9Yfl/zh/report/lm-rank.json");
+            if (params != null && !params.isEmpty()) {
+                urlBuilder.append("?");
+                for (Map.Entry<String, String> entry : params.entrySet()) {
+                    urlBuilder.append(entry.getKey()).append("=")
+                            .append(java.net.URLEncoder.encode(entry.getValue(), "UTF-8")).append("&");
+                }
+                urlBuilder.deleteCharAt(urlBuilder.length() - 1);
+            }
+
+            // 创建请求
+            Request request = new Request.Builder()
+                    .url(urlBuilder.toString())
+                    .addHeader("X-ZQ-Ignore", "1")
+                    .build();
+
+            // 发送请求
+            Response response = okHttpClient.newCall(request).execute();
+            if (response.isSuccessful() && response.body() != null) {
+                String responseBody = response.body().string();
+                // 直接返回响应内容
+                Object result = com.alibaba.fastjson.JSON.parse(responseBody);
+                return HoppinResponse.success(result);
+            } else {
+                return HoppinResponse.fail("获取大模型排名失败: " + response.message());
+            }
+        } catch (IOException e) {
+            log.error("获取大模型排名失败", e);
+            return HoppinResponse.fail("获取大模型排名失败: " + e.getMessage());
+        }
+    }
+
+    /**
+     * 获取编程排名代理接口
+     */
+    @GetMapping("/hellogithub/tiobe")
+    public HoppinResponse<Object> getTiobeRank(@RequestParam(required = false) Map<String, String> params) {
+        try {
+            // 构建请求URL
+            StringBuilder urlBuilder = new StringBuilder("https://hellogithub.com/_next/data/JdGrOpd-mbD4CLgVF9Yfl/zh/report/tiobe.json");
+            if (params != null && !params.isEmpty()) {
+                urlBuilder.append("?");
+                for (Map.Entry<String, String> entry : params.entrySet()) {
+                    urlBuilder.append(entry.getKey()).append("=")
+                            .append(java.net.URLEncoder.encode(entry.getValue(), "UTF-8")).append("&");
+                }
+                urlBuilder.deleteCharAt(urlBuilder.length() - 1);
+            }
+
+            // 创建请求
+            Request request = new Request.Builder()
+                    .url(urlBuilder.toString())
+                    .addHeader("X-ZQ-Ignore", "1")
+                    .build();
+
+            // 发送请求
+            Response response = okHttpClient.newCall(request).execute();
+            if (response.isSuccessful() && response.body() != null) {
+                String responseBody = response.body().string();
+                // 直接返回响应内容
+                Object result = com.alibaba.fastjson.JSON.parse(responseBody);
+                return HoppinResponse.success(result);
+            } else {
+                return HoppinResponse.fail("获取编程排名失败: " + response.message());
+            }
+        } catch (IOException e) {
+            log.error("获取编程排名失败", e);
+            return HoppinResponse.fail("获取编程排名失败: " + e.getMessage());
         }
     }
 }

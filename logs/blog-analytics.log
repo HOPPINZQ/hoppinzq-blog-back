@@ -1,426 +1,149 @@
-2025-12-17 08:46:56.794 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Starting BlogAnalyticsApplication using Java 17.0.16 on zhnagqi17 with PID 28120 (D:\project\github\hoppinzq-blog-back\target\classes started by zhangqi17 in D:\project\github\hoppinzq-blog-back)
-2025-12-17 08:46:56.815 [main] DEBUG com.blog.analytics.BlogAnalyticsApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
-2025-12-17 08:46:56.816 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-17 08:46:58.715 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-12-17 08:46:58.720 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-12-17 08:46:58.760 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
-2025-12-17 08:46:59.940 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2025-12-17 08:46:59.960 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-12-17 08:46:59.961 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
-2025-12-17 08:47:00.445 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-12-17 08:47:00.446 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3497 ms
-2025-12-17 08:47:04.845 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
-2025-12-17 08:47:05.066 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2025-12-17 08:47:05.136 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Started BlogAnalyticsApplication in 9.261 seconds (JVM running for 11.639)
-2025-12-17 08:47:05.151 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据源类型: com.zaxxer.hikari.HikariDataSource
-2025-12-17 08:47:05.155 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试数据库连接...
-2025-12-17 08:47:05.171 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Starting...
-2025-12-17 08:47:06.438 [main] ERROR com.zaxxer.hikari.pool.HikariPool - BlogAnalyticsHikariCP - Exception during pool initialization.
-com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160)
-	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118)
-	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:378)
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:468)
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:478)
-	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:511)
-	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:518)
-	at com.blog.analytics.config.DatabaseTest.lambda$testDatabaseConnection$0(DatabaseTest.java:30)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
-	at org.springframework.boot.SpringApplication.lambda$callRunners$2(SpringApplication.java:749)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:744)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
-	at com.blog.analytics.BlogAnalyticsApplication.main(BlogAnalyticsApplication.java:22)
-Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
-	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
-	... 34 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: getsockopt
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:554)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:633)
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
-	... 37 common frames omitted
-2025-12-17 08:47:06.441 [main] ERROR com.blog.analytics.config.DatabaseTest - 数据库连接测试失败！
-org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:84)
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:378)
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:468)
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:478)
-	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:511)
-	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:518)
-	at com.blog.analytics.config.DatabaseTest.lambda$testDatabaseConnection$0(DatabaseTest.java:30)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
-	at org.springframework.boot.SpringApplication.lambda$callRunners$2(SpringApplication.java:749)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:744)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
-	at com.blog.analytics.BlogAnalyticsApplication.main(BlogAnalyticsApplication.java:22)
-Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160)
-	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118)
-	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
-	... 21 common frames omitted
-Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
-	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
-	... 34 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: getsockopt
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:554)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:633)
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
-	... 37 common frames omitted
-2025-12-17 08:47:06.450 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2025-12-17 08:47:06.507 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
-java.lang.IllegalStateException: Failed to execute CommandLineRunner
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:768)
-	at org.springframework.boot.SpringApplication.lambda$callRunners$2(SpringApplication.java:749)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:744)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
-	at com.blog.analytics.BlogAnalyticsApplication.main(BlogAnalyticsApplication.java:22)
-Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:84)
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:378)
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:468)
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:478)
-	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:511)
-	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:518)
-	at com.blog.analytics.config.DatabaseTest.lambda$testDatabaseConnection$0(DatabaseTest.java:30)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
-	... 14 common frames omitted
-Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160)
-	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118)
-	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
-	... 21 common frames omitted
-Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
-	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
-	... 34 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: getsockopt
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:554)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:633)
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
-	... 37 common frames omitted
-2025-12-17 08:49:47.987 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Starting BlogAnalyticsApplication using Java 17.0.16 on zhnagqi17 with PID 30608 (D:\project\github\hoppinzq-blog-back\target\classes started by zhangqi17 in D:\project\github\hoppinzq-blog-back)
-2025-12-17 08:49:47.988 [main] DEBUG com.blog.analytics.BlogAnalyticsApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
-2025-12-17 08:49:47.989 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-17 08:49:50.566 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-12-17 08:49:50.573 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-12-17 08:49:50.781 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 134 ms. Found 0 Redis repository interfaces.
-2025-12-17 08:49:52.000 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2025-12-17 08:49:52.010 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-12-17 08:49:52.011 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
-2025-12-17 08:49:52.261 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-12-17 08:49:52.261 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4209 ms
-2025-12-17 08:49:54.141 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
-2025-12-17 08:49:54.220 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2025-12-17 08:49:54.250 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Started BlogAnalyticsApplication in 6.974 seconds (JVM running for 8.775)
-2025-12-17 08:49:54.258 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据源类型: com.zaxxer.hikari.HikariDataSource
-2025-12-17 08:49:54.260 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试数据库连接...
-2025-12-17 08:49:54.265 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Starting...
-2025-12-17 08:49:55.186 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Start completed.
-2025-12-17 08:49:55.261 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接测试成功，返回值: 1
-2025-12-17 08:49:55.319 [main] INFO  com.blog.analytics.config.DatabaseTest - MySQL版本: 8.0.24
-2025-12-17 08:49:55.556 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库表创建测试成功
-2025-12-17 08:49:55.706 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试表清理完成
-2025-12-17 08:49:55.706 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接配置验证通过！
-2025-12-17 08:50:02.529 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-12-17 08:50:02.530 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-12-17 08:50:02.531 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-12-17 08:50:08.395 [http-nio-8080-exec-2] ERROR com.blog.analytics.controller.ProxyController - 获取新闻热搜失败
-java.net.UnknownHostException: 不知道这样的主机。 (hoppin-api.com)
-	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
-	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:934)
-	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1543)
-	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:852)
-	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533)
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385)
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
-	at okhttp3.Dns$Companion$DnsSystem.lookup(Dns.kt:49)
-	at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.kt:164)
-	at okhttp3.internal.connection.RouteSelector.nextProxy(RouteSelector.kt:129)
-	at okhttp3.internal.connection.RouteSelector.next(RouteSelector.kt:71)
-	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:205)
-	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106)
-	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74)
-	at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
-	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
-	at okhttp3.internal.connection.RealCall.execute(RealCall.kt:154)
-	at com.blog.analytics.controller.ProxyController.getNewsHotList(ProxyController.java:56)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+2025-12-18 13:54:00.373 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Starting BlogAnalyticsApplication using Java 17.0.16 on zhnagqi17 with PID 34532 (D:\project\github\hoppinzq-blog-back\target\classes started by zhangqi17 in D:\project\github\hoppinzq-blog-back)
+2025-12-18 13:54:00.395 [main] DEBUG com.blog.analytics.BlogAnalyticsApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-18 13:54:00.396 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-18 13:54:02.139 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-18 13:54:02.144 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-18 13:54:02.197 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2025-12-18 13:54:05.122 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9050 (http)
+2025-12-18 13:54:05.146 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-18 13:54:05.146 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-12-18 13:54:06.073 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-18 13:54:06.074 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5519 ms
+2025-12-18 13:54:12.671 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-12-18 13:54:12.761 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9050 (http) with context path ''
+2025-12-18 13:54:12.790 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Started BlogAnalyticsApplication in 13.371 seconds (JVM running for 15.957)
+2025-12-18 13:54:12.797 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据源类型: com.zaxxer.hikari.HikariDataSource
+2025-12-18 13:54:12.798 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试数据库连接...
+2025-12-18 13:54:12.804 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Starting...
+2025-12-18 13:54:13.669 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Start completed.
+2025-12-18 13:54:13.746 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接测试成功，返回值: 1
+2025-12-18 13:54:13.800 [main] INFO  com.blog.analytics.config.DatabaseTest - MySQL版本: 8.0.24
+2025-12-18 13:54:13.942 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库表创建测试成功
+2025-12-18 13:54:14.077 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试表清理完成
+2025-12-18 13:54:14.077 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接配置验证通过！
+2025-12-18 13:54:20.805 [http-nio-9050-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-18 13:54:20.805 [http-nio-9050-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-18 13:54:20.807 [http-nio-9050-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-12-18 13:54:22.978 [http-nio-9050-exec-3] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2025-12-18 13:54:23.025 [http-nio-9050-exec-3] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /posts/java-tutorial(String), 127.0.0.1(String), Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36(String), https://google.com(String), 2025-12-18T13:54:21.334972(LocalDateTime), 20251218(Integer), 2025121813(Integer), 2025-12-18T13:54:22.970276700(LocalDateTime), 2025-12-18T13:54:22.970276700(LocalDateTime), 0(Integer)
+2025-12-18 13:54:23.155 [http-nio-9050-exec-3] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
+2025-12-18 13:54:23.387 [http-nio-9050-exec-3] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/posts/java-tutorial, ip=127.0.0.1
+2025-12-18 13:54:24.117 [http-nio-9050-exec-4] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2025-12-18 13:54:24.119 [http-nio-9050-exec-4] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /(String), 127.0.0.1(String), Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/53 7.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36(String), https://baidu.com(String), 2025-12-18T13:54:23.482994700(LocalDateTime), 20251218(Integer), 2025121813(Integer), 2025-12-18T13:54:24.116379700(LocalDateTime), 2025-12-18T13:54:24.116379700(LocalDateTime), 0(Integer)
+2025-12-18 13:54:24.229 [http-nio-9050-exec-4] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
+2025-12-18 13:54:24.454 [http-nio-9050-exec-4] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/, ip=127.0.0.1
+2025-12-18 13:54:24.949 [http-nio-9050-exec-5] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2025-12-18 13:54:24.951 [http-nio-9050-exec-5] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /posts/spring-boot-guide(String), 127.0.0.1(String), Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36(String), https://github.com(String), 2025-12-18T13:54:24.560670200(LocalDateTime), 20251218(Integer), 2025121813(Integer), 2025-12-18T13:54:24.949534400(LocalDateTime), 2025-12-18T13:54:24.949534400(LocalDateTime), 0(Integer)
+2025-12-18 13:54:25.087 [http-nio-9050-exec-5] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
+2025-12-18 13:54:25.309 [http-nio-9050-exec-5] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/posts/spring-boot-guide, ip=127.0.0.1
+2025-12-18 13:54:25.819 [http-nio-9050-exec-6] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2025-12-18 13:54:25.821 [http-nio-9050-exec-6] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /posts/react-tutorial(String), 127.0.0.1(String), Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1(String), https://twitter.com(String), 2025-12-18T13:54:25.423699400(LocalDateTime), 20251218(Integer), 2025121813(Integer), 2025-12-18T13:54:25.818171(LocalDateTime), 2025-12-18T13:54:25.818171(LocalDateTime), 0(Integer)
+2025-12-18 13:54:25.933 [http-nio-9050-exec-6] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
+2025-12-18 13:54:26.178 [http-nio-9050-exec-6] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/posts/react-tutorial, ip=127.0.0.1
+2025-12-18 13:54:26.875 [http-nio-9050-exec-8] DEBUG c.b.a.mapper.VisitRecordMapper.getRealtimeStats - ==>  Preparing: SELECT COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIps FROM visit_record WHERE visit_time >= ? AND deleted = 0
+2025-12-18 13:54:26.876 [http-nio-9050-exec-8] DEBUG c.b.a.mapper.VisitRecordMapper.getRealtimeStats - ==> Parameters: 2025-12-18T12:54:26.817045800(LocalDateTime)
+2025-12-18 13:54:26.970 [http-nio-9050-exec-8] DEBUG c.b.a.mapper.VisitRecordMapper.getRealtimeStats - <==      Total: 1
+2025-12-18 13:54:27.351 [http-nio-9050-exec-9] DEBUG c.b.analytics.mapper.VisitRecordMapper.getHotPages - ==>  Preparing: SELECT page_url as pageUrl, page_title as pageTitle, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY page_url, page_title ORDER BY visitCount DESC LIMIT ?
+2025-12-18 13:54:27.352 [http-nio-9050-exec-9] DEBUG c.b.analytics.mapper.VisitRecordMapper.getHotPages - ==> Parameters: 20251212(Integer), 20251218(Integer), 10(Integer)
+2025-12-18 13:54:27.413 [http-nio-9050-exec-9] DEBUG c.b.analytics.mapper.VisitRecordMapper.getHotPages - <==      Total: 10
+2025-12-18 13:54:27.589 [http-nio-9050-exec-10] DEBUG c.b.a.mapper.VisitRecordMapper.getRangeStats - ==>  Preparing: SELECT date_key as dateKey, COUNT(*) as totalVisits, COUNT(DISTINCT ip_address) as uniqueIps, COUNT(*) as pageViews FROM visit_record WHERE date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY date_key ORDER BY date_key
+2025-12-18 13:54:27.591 [http-nio-9050-exec-10] DEBUG c.b.a.mapper.VisitRecordMapper.getRangeStats - ==> Parameters: 20251210(Integer), 20251212(Integer)
+2025-12-18 13:54:27.646 [http-nio-9050-exec-10] DEBUG c.b.a.mapper.VisitRecordMapper.getRangeStats - <==      Total: 1
+2025-12-18 13:54:27.717 [http-nio-9050-exec-1] DEBUG c.b.a.mapper.VisitRecordMapper.getHourlyStats - ==>  Preparing: SELECT hour_key as hourKey, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key = ? AND deleted = 0 GROUP BY hour_key ORDER BY hour_key
+2025-12-18 13:54:27.718 [http-nio-9050-exec-1] DEBUG c.b.a.mapper.VisitRecordMapper.getHourlyStats - ==> Parameters: 20251212(Integer)
+2025-12-18 13:54:27.779 [http-nio-9050-exec-1] DEBUG c.b.a.mapper.VisitRecordMapper.getHourlyStats - <==      Total: 3
+2025-12-18 13:54:27.840 [http-nio-9050-exec-2] DEBUG c.b.a.mapper.VisitRecordMapper.getBrowserStats - ==>  Preparing: SELECT CASE WHEN user_agent LIKE '%Chrome%' AND user_agent NOT LIKE '%Edge%' THEN 'Chrome' WHEN user_agent LIKE '%Firefox%' THEN 'Firefox' WHEN user_agent LIKE '%Safari%' AND user_agent NOT LIKE '%Chrome%' THEN 'Safari' WHEN user_agent LIKE '%Edge%' THEN 'Edge' WHEN user_agent LIKE '%Opera%' OR user_agent LIKE '%OPR%' THEN 'Opera' WHEN user_agent LIKE '%MSIE%' OR user_agent LIKE '%Trident%' THEN 'Internet Explorer' WHEN user_agent LIKE '%MicroMessenger%' THEN 'WeChat' ELSE 'Other' END as browser, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key = ? AND deleted = 0 AND user_agent IS NOT NULL GROUP BY CASE WHEN user_agent LIKE '%Chrome%' AND user_agent NOT LIKE '%Edge%' THEN 'Chrome' WHEN user_agent LIKE '%Firefox%' THEN 'Firefox' WHEN user_agent LIKE '%Safari%' AND user_agent NOT LIKE '%Chrome%' THEN 'Safari' WHEN user_agent LIKE '%Edge%' THEN 'Edge' WHEN user_agent LIKE '%Opera%' OR user_agent LIKE '%OPR%' THEN 'Opera' WHEN user_agent LIKE '%MSIE%' OR user_agent LIKE '%Trident%' THEN 'Internet Explorer' WHEN user_agent LIKE '%MicroMessenger%' THEN 'WeChat' ELSE 'Other' END ORDER BY visitCount DESC
+2025-12-18 13:54:27.841 [http-nio-9050-exec-2] DEBUG c.b.a.mapper.VisitRecordMapper.getBrowserStats - ==> Parameters: 20251212(Integer)
+2025-12-18 13:54:27.932 [http-nio-9050-exec-2] DEBUG c.b.a.mapper.VisitRecordMapper.getBrowserStats - <==      Total: 3
+2025-12-18 13:54:27.990 [http-nio-9050-exec-3] DEBUG c.b.analytics.mapper.VisitRecordMapper.getOSStats - ==>  Preparing: SELECT CASE WHEN user_agent LIKE '%Windows NT 10%' THEN 'Windows 10' WHEN user_agent LIKE '%Windows NT 6.3%' THEN 'Windows 8.1' WHEN user_agent LIKE '%Windows NT 6.2%' THEN 'Windows 8' WHEN user_agent LIKE '%Windows NT 6.1%' THEN 'Windows 7' WHEN user_agent LIKE '%Windows NT%' THEN 'Windows' WHEN user_agent LIKE '%Mac OS X%' THEN 'macOS' WHEN user_agent LIKE '%iPhone OS%' OR user_agent LIKE '%iPad%' THEN 'iOS' WHEN user_agent LIKE '%Android%' THEN 'Android' WHEN user_agent LIKE '%Linux%' THEN 'Linux' ELSE 'Other' END as os, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key = ? AND deleted = 0 AND user_agent IS NOT NULL GROUP BY CASE WHEN user_agent LIKE '%Windows NT 10%' THEN 'Windows 10' WHEN user_agent LIKE '%Windows NT 6.3%' THEN 'Windows 8.1' WHEN user_agent LIKE '%Windows NT 6.2%' THEN 'Windows 8' WHEN user_agent LIKE '%Windows NT 6.1%' THEN 'Windows 7' WHEN user_agent LIKE '%Windows NT%' THEN 'Windows' WHEN user_agent LIKE '%Mac OS X%' THEN 'macOS' WHEN user_agent LIKE '%iPhone OS%' OR user_agent LIKE '%iPad%' THEN 'iOS' WHEN user_agent LIKE '%Android%' THEN 'Android' WHEN user_agent LIKE '%Linux%' THEN 'Linux' ELSE 'Other' END ORDER BY visitCount DESC
+2025-12-18 13:54:27.991 [http-nio-9050-exec-3] DEBUG c.b.analytics.mapper.VisitRecordMapper.getOSStats - ==> Parameters: 20251212(Integer)
+2025-12-18 13:54:28.048 [http-nio-9050-exec-3] DEBUG c.b.analytics.mapper.VisitRecordMapper.getOSStats - <==      Total: 3
+2025-12-18 13:54:28.102 [http-nio-9050-exec-4] DEBUG c.b.a.mapper.VisitRecordMapper.getRefererStats - ==>  Preparing: SELECT CASE WHEN referer IS NULL OR referer = '' THEN 'Direct' WHEN referer LIKE '%google%' THEN 'Google' WHEN referer LIKE '%baidu%' THEN 'Baidu' WHEN referer LIKE '%bing%' THEN 'Bing' WHEN referer LIKE '%yahoo%' THEN 'Yahoo' WHEN referer LIKE '%sogou%' THEN 'Sogou' WHEN referer LIKE '%so%' THEN '360' ELSE 'Other' END as refererDomain, referer as refererUrl, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY CASE WHEN referer IS NULL OR referer = '' THEN 'Direct' WHEN referer LIKE '%google%' THEN 'Google' WHEN referer LIKE '%baidu%' THEN 'Baidu' WHEN referer LIKE '%bing%' THEN 'Bing' WHEN referer LIKE '%yahoo%' THEN 'Yahoo' WHEN referer LIKE '%sogou%' THEN 'Sogou' WHEN referer LIKE '%so%' THEN '360' ELSE 'Other' END, referer ORDER BY visitCount DESC LIMIT ?
+2025-12-18 13:54:28.104 [http-nio-9050-exec-4] DEBUG c.b.a.mapper.VisitRecordMapper.getRefererStats - ==> Parameters: 20251212(Integer), 20251218(Integer), 10(Integer)
+2025-12-18 13:54:28.164 [http-nio-9050-exec-4] DEBUG c.b.a.mapper.VisitRecordMapper.getRefererStats - <==      Total: 9
+2025-12-18 13:54:28.235 [http-nio-9050-exec-5] DEBUG c.b.a.mapper.VisitRecordMapper.getDailyPageStats - ==>  Preparing: SELECT date_key as dateKey, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE page_url = ? AND date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY date_key ORDER BY date_key
+2025-12-18 13:54:28.235 [http-nio-9050-exec-5] DEBUG c.b.a.mapper.VisitRecordMapper.getDailyPageStats - ==> Parameters: /posts/java-tutorial(String), 20251212(Integer), 20251218(Integer)
+2025-12-18 13:54:28.293 [http-nio-9050-exec-5] DEBUG c.b.a.mapper.VisitRecordMapper.getDailyPageStats - <==      Total: 3
+2025-12-18 13:54:28.361 [http-nio-9050-exec-6] DEBUG c.b.a.mapper.VisitRecordMapper.getRegionStats - ==>  Preparing: SELECT ip_address as ipAddress, COUNT(*) as visitCount, MAX(visit_time) as lastVisitTime FROM visit_record WHERE date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY ip_address ORDER BY visitCount DESC LIMIT ?
+2025-12-18 13:54:28.362 [http-nio-9050-exec-6] DEBUG c.b.a.mapper.VisitRecordMapper.getRegionStats - ==> Parameters: 20251212(Integer), 20251218(Integer), 10(Integer)
+2025-12-18 13:54:28.423 [http-nio-9050-exec-6] DEBUG c.b.a.mapper.VisitRecordMapper.getRegionStats - <==      Total: 10
+2025-12-18 13:54:28.963 [http-nio-9050-exec-7] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2025-12-18 13:54:28.966 [http-nio-9050-exec-7] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /posts/vue-tutorial(String), 127.0.0.1(String), Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36(String), https://stackoverflow.com(String), 2025-12-18T13:54:28.578825900(LocalDateTime), 20251218(Integer), 2025121813(Integer), 2025-12-18T13:54:28.963834500(LocalDateTime), 2025-12-18T13:54:28.963834500(LocalDateTime), 0(Integer)
+2025-12-18 13:54:29.078 [http-nio-9050-exec-7] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
+2025-12-18 13:54:29.300 [http-nio-9050-exec-7] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/posts/vue-tutorial, ip=127.0.0.1
+2025-12-18 13:54:29.825 [http-nio-9050-exec-8] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2025-12-18 13:54:29.826 [http-nio-9050-exec-8] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /about(String), 127.0.0.1(String), Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0(String), (String), 2025-12-18T13:54:29.417439(LocalDateTime), 20251218(Integer), 2025121813(Integer), 2025-12-18T13:54:29.824271700(LocalDateTime), 2025-12-18T13:54:29.824271700(LocalDateTime), 0(Integer)
+2025-12-18 13:54:29.937 [http-nio-9050-exec-8] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
+2025-12-18 13:54:30.157 [http-nio-9050-exec-8] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/about, ip=127.0.0.1
+2025-12-18 13:54:30.657 [http-nio-9050-exec-9] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2025-12-18 13:54:30.659 [http-nio-9050-exec-9] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /contact(String), 127.0.0.1(String), Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15(String), https://localhost:9050(String), 2025-12-18T13:54:30.263900100(LocalDateTime), 20251218(Integer), 2025121813(Integer), 2025-12-18T13:54:30.656902800(LocalDateTime), 2025-12-18T13:54:30.656902800(LocalDateTime), 0(Integer)
+2025-12-18 13:54:30.769 [http-nio-9050-exec-9] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
+2025-12-18 13:54:30.992 [http-nio-9050-exec-9] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/contact, ip=127.0.0.1
+2025-12-18 13:59:30.401 [lettuce-nioEventLoop-4-1] INFO  io.lettuce.core.protocol.CommandHandler - null Unexpected exception during request: java.net.SocketException: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:840)
-2025-12-17 08:51:30.946 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown initiated...
-2025-12-17 08:51:30.955 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown completed.
-2025-12-17 08:51:40.704 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Starting BlogAnalyticsApplication using Java 17.0.16 on zhnagqi17 with PID 3720 (D:\project\github\hoppinzq-blog-back\target\classes started by zhangqi17 in D:\project\github\hoppinzq-blog-back)
-2025-12-17 08:51:40.706 [main] DEBUG com.blog.analytics.BlogAnalyticsApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
-2025-12-17 08:51:40.706 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-17 08:51:41.788 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-12-17 08:51:41.793 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-12-17 08:51:41.820 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
-2025-12-17 08:51:42.527 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2025-12-17 08:51:42.536 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-12-17 08:51:42.537 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
-2025-12-17 08:51:42.766 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-12-17 08:51:42.767 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2000 ms
-2025-12-17 08:51:44.593 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
-2025-12-17 08:51:44.673 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2025-12-17 08:51:44.699 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Started BlogAnalyticsApplication in 4.606 seconds (JVM running for 6.264)
-2025-12-17 08:51:44.709 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据源类型: com.zaxxer.hikari.HikariDataSource
-2025-12-17 08:51:44.710 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试数据库连接...
-2025-12-17 08:51:44.716 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Starting...
-2025-12-17 08:51:45.263 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Start completed.
-2025-12-17 08:51:45.336 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接测试成功，返回值: 1
-2025-12-17 08:51:45.388 [main] INFO  com.blog.analytics.config.DatabaseTest - MySQL版本: 8.0.24
-2025-12-17 08:51:45.520 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库表创建测试成功
-2025-12-17 08:51:45.641 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试表清理完成
-2025-12-17 08:51:45.641 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接配置验证通过！
-2025-12-17 08:51:50.057 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-12-17 08:51:50.058 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-12-17 08:51:50.059 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-12-17 08:52:26.426 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown initiated...
-2025-12-17 08:52:26.432 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown completed.
-2025-12-17 08:52:31.743 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Starting BlogAnalyticsApplication using Java 17.0.16 on zhnagqi17 with PID 16476 (D:\project\github\hoppinzq-blog-back\target\classes started by zhangqi17 in D:\project\github\hoppinzq-blog-back)
-2025-12-17 08:52:31.744 [main] DEBUG com.blog.analytics.BlogAnalyticsApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
-2025-12-17 08:52:31.745 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-17 08:52:32.985 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-12-17 08:52:32.988 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-12-17 08:52:33.016 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-2025-12-17 08:52:33.752 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9050 (http)
-2025-12-17 08:52:33.762 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-12-17 08:52:33.762 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
-2025-12-17 08:52:34.099 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-12-17 08:52:34.099 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2279 ms
-2025-12-17 08:52:36.072 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
-2025-12-17 08:52:36.186 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9050 (http) with context path ''
-2025-12-17 08:52:36.224 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Started BlogAnalyticsApplication in 5.224 seconds (JVM running for 7.819)
-2025-12-17 08:52:36.235 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据源类型: com.zaxxer.hikari.HikariDataSource
-2025-12-17 08:52:36.239 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试数据库连接...
-2025-12-17 08:52:36.249 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Starting...
-2025-12-17 08:52:37.016 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Start completed.
-2025-12-17 08:52:37.179 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接测试成功，返回值: 1
-2025-12-17 08:52:37.236 [main] INFO  com.blog.analytics.config.DatabaseTest - MySQL版本: 8.0.24
-2025-12-17 08:52:37.384 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库表创建测试成功
-2025-12-17 08:52:37.536 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试表清理完成
-2025-12-17 08:52:37.537 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接配置验证通过！
-2025-12-17 08:52:47.410 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown initiated...
-2025-12-17 08:52:47.417 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown completed.
-2025-12-17 08:52:52.335 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Starting BlogAnalyticsApplication using Java 17.0.16 on zhnagqi17 with PID 19440 (D:\project\github\hoppinzq-blog-back\target\classes started by zhangqi17 in D:\project\github\hoppinzq-blog-back)
-2025-12-17 08:52:52.336 [main] DEBUG com.blog.analytics.BlogAnalyticsApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
-2025-12-17 08:52:52.338 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-17 08:52:53.705 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-12-17 08:52:53.708 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-12-17 08:52:53.747 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
-2025-12-17 08:52:54.706 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9050 (http)
-2025-12-17 08:52:54.719 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-12-17 08:52:54.720 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
-2025-12-17 08:52:55.048 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-12-17 08:52:55.048 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2617 ms
-2025-12-17 08:52:57.308 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
-2025-12-17 08:52:57.396 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9050 (http) with context path ''
-2025-12-17 08:52:57.425 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Started BlogAnalyticsApplication in 5.891 seconds (JVM running for 7.929)
-2025-12-17 08:52:57.437 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据源类型: com.zaxxer.hikari.HikariDataSource
-2025-12-17 08:52:57.439 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试数据库连接...
-2025-12-17 08:52:57.445 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Starting...
-2025-12-17 08:52:58.137 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Start completed.
-2025-12-17 08:52:58.207 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接测试成功，返回值: 1
-2025-12-17 08:52:58.250 [main] INFO  com.blog.analytics.config.DatabaseTest - MySQL版本: 8.0.24
-2025-12-17 08:52:58.372 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库表创建测试成功
-2025-12-17 08:52:58.490 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试表清理完成
-2025-12-17 08:52:58.491 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接配置验证通过！
-2025-12-17 17:25:32.447 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Starting BlogAnalyticsApplication v1.0.0-SNAPSHOT using Java 17.0.16 on zhnagqi17 with PID 5920 (D:\project\github\hoppinzq-blog-back\target\hoppinzq-blog-back-1.0.0-SNAPSHOT.jar started by zhangqi17 in D:\project\github\hoppinzq-blog-back)
-2025-12-17 17:25:32.457 [main] DEBUG com.blog.analytics.BlogAnalyticsApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
-2025-12-17 17:25:32.462 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-18 13:59:30.504 [lettuce-eventExecutorLoop-1-4] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was /175.178.115.82:6379
+2025-12-18 13:59:30.701 [lettuce-nioEventLoop-4-2] INFO  io.lettuce.core.protocol.ReconnectionHandler - Reconnected to 175.178.115.82/<unresolved>:6379
+2025-12-18 14:02:25.853 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown initiated...
+2025-12-18 14:02:25.867 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown completed.
+2025-12-18 17:23:26.297 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Starting BlogAnalyticsApplication v1.0.0-SNAPSHOT using Java 17.0.16 on zhnagqi17 with PID 34028 (D:\project\github\hoppinzq-blog-back\target\hoppinzq-blog-back-1.0.0-SNAPSHOT.jar started by zhangqi17 in D:\project\github\hoppinzq-blog-back)
+2025-12-18 17:23:26.308 [main] DEBUG com.blog.analytics.BlogAnalyticsApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-18 17:23:26.309 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-18 17:23:31.364 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-18 17:23:31.389 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-18 17:23:31.553 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 0 Redis repository interfaces.
+2025-12-18 17:23:37.495 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9050 (http)
+2025-12-18 17:23:37.530 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-18 17:23:37.532 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-12-18 17:23:37.858 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-18 17:23:37.859 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 11314 ms
+2025-12-18 17:23:49.895 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-12-18 17:23:50.415 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9050 (http) with context path ''
+2025-12-18 17:23:50.666 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Started BlogAnalyticsApplication in 26.205 seconds (JVM running for 27.373)
+2025-12-18 17:23:51.050 [main] INFO  com.blog.analytics.config.DatabaseTest - ����Դ����: com.zaxxer.hikari.HikariDataSource
+2025-12-18 17:23:51.060 [main] INFO  com.blog.analytics.config.DatabaseTest - �������ݿ�����...
+2025-12-18 17:23:51.100 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Starting...
+2025-12-18 17:23:53.207 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Start completed.
+2025-12-18 17:23:53.488 [main] INFO  com.blog.analytics.config.DatabaseTest - ���ݿ����Ӳ��Գɹ�������ֵ: 1
+2025-12-18 17:23:53.543 [main] INFO  com.blog.analytics.config.DatabaseTest - MySQL�汾: 8.0.24
+2025-12-18 17:23:53.860 [main] INFO  com.blog.analytics.config.DatabaseTest - ���ݿ���������Գɹ�
+2025-12-18 17:23:54.046 [main] INFO  com.blog.analytics.config.DatabaseTest - ���Ա��������
+2025-12-18 17:23:54.049 [main] INFO  com.blog.analytics.config.DatabaseTest - ���ݿ�����������֤ͨ����
+2025-12-18 17:34:30.415 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Starting BlogAnalyticsApplication using Java 17.0.16 on zhnagqi17 with PID 8500 (D:\project\github\hoppinzq-blog-back\target\classes started by zhangqi17 in D:\project\github\hoppinzq-blog-back)
+2025-12-18 17:34:30.421 [main] DEBUG com.blog.analytics.BlogAnalyticsApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-18 17:34:30.423 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-18 17:34:33.291 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-18 17:34:33.299 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-18 17:34:33.371 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
+2025-12-18 17:34:35.298 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9050 (http)
+2025-12-18 17:34:35.326 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-18 17:34:35.326 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-12-18 17:34:35.960 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-18 17:34:35.961 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5297 ms
+2025-12-18 17:34:39.504 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-12-18 17:34:39.622 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9050 (http) with context path ''
+2025-12-18 17:34:39.655 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Started BlogAnalyticsApplication in 10.665 seconds (JVM running for 13.976)
+2025-12-18 17:34:39.666 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据源类型: com.zaxxer.hikari.HikariDataSource
+2025-12-18 17:34:39.668 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试数据库连接...
+2025-12-18 17:34:39.675 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Starting...
+2025-12-18 17:34:40.508 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Start completed.
+2025-12-18 17:34:40.625 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接测试成功，返回值: 1
+2025-12-18 17:34:40.673 [main] INFO  com.blog.analytics.config.DatabaseTest - MySQL版本: 8.0.24
+2025-12-18 17:34:40.804 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库表创建测试成功
+2025-12-18 17:34:40.933 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试表清理完成
+2025-12-18 17:34:40.934 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接配置验证通过！
+2025-12-18 17:34:52.526 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown initiated...
+2025-12-18 17:34:52.537 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown completed.
