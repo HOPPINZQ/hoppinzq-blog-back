@@ -1,85 +1,134 @@
-2025-12-18 13:54:00.373 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Starting BlogAnalyticsApplication using Java 17.0.16 on zhnagqi17 with PID 34532 (D:\project\github\hoppinzq-blog-back\target\classes started by zhangqi17 in D:\project\github\hoppinzq-blog-back)
-2025-12-18 13:54:00.395 [main] DEBUG com.blog.analytics.BlogAnalyticsApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
-2025-12-18 13:54:00.396 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-18 13:54:02.139 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-12-18 13:54:02.144 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-12-18 13:54:02.197 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
-2025-12-18 13:54:05.122 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9050 (http)
-2025-12-18 13:54:05.146 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-12-18 13:54:05.146 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
-2025-12-18 13:54:06.073 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-12-18 13:54:06.074 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5519 ms
-2025-12-18 13:54:12.671 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
-2025-12-18 13:54:12.761 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9050 (http) with context path ''
-2025-12-18 13:54:12.790 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Started BlogAnalyticsApplication in 13.371 seconds (JVM running for 15.957)
-2025-12-18 13:54:12.797 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据源类型: com.zaxxer.hikari.HikariDataSource
-2025-12-18 13:54:12.798 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试数据库连接...
-2025-12-18 13:54:12.804 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Starting...
-2025-12-18 13:54:13.669 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Start completed.
-2025-12-18 13:54:13.746 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接测试成功，返回值: 1
-2025-12-18 13:54:13.800 [main] INFO  com.blog.analytics.config.DatabaseTest - MySQL版本: 8.0.24
-2025-12-18 13:54:13.942 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库表创建测试成功
-2025-12-18 13:54:14.077 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试表清理完成
-2025-12-18 13:54:14.077 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接配置验证通过！
-2025-12-18 13:54:20.805 [http-nio-9050-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-12-18 13:54:20.805 [http-nio-9050-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-12-18 13:54:20.807 [http-nio-9050-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2025-12-18 13:54:22.978 [http-nio-9050-exec-3] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
-2025-12-18 13:54:23.025 [http-nio-9050-exec-3] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /posts/java-tutorial(String), 127.0.0.1(String), Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36(String), https://google.com(String), 2025-12-18T13:54:21.334972(LocalDateTime), 20251218(Integer), 2025121813(Integer), 2025-12-18T13:54:22.970276700(LocalDateTime), 2025-12-18T13:54:22.970276700(LocalDateTime), 0(Integer)
-2025-12-18 13:54:23.155 [http-nio-9050-exec-3] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
-2025-12-18 13:54:23.387 [http-nio-9050-exec-3] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/posts/java-tutorial, ip=127.0.0.1
-2025-12-18 13:54:24.117 [http-nio-9050-exec-4] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
-2025-12-18 13:54:24.119 [http-nio-9050-exec-4] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /(String), 127.0.0.1(String), Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/53 7.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36(String), https://baidu.com(String), 2025-12-18T13:54:23.482994700(LocalDateTime), 20251218(Integer), 2025121813(Integer), 2025-12-18T13:54:24.116379700(LocalDateTime), 2025-12-18T13:54:24.116379700(LocalDateTime), 0(Integer)
-2025-12-18 13:54:24.229 [http-nio-9050-exec-4] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
-2025-12-18 13:54:24.454 [http-nio-9050-exec-4] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/, ip=127.0.0.1
-2025-12-18 13:54:24.949 [http-nio-9050-exec-5] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
-2025-12-18 13:54:24.951 [http-nio-9050-exec-5] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /posts/spring-boot-guide(String), 127.0.0.1(String), Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36(String), https://github.com(String), 2025-12-18T13:54:24.560670200(LocalDateTime), 20251218(Integer), 2025121813(Integer), 2025-12-18T13:54:24.949534400(LocalDateTime), 2025-12-18T13:54:24.949534400(LocalDateTime), 0(Integer)
-2025-12-18 13:54:25.087 [http-nio-9050-exec-5] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
-2025-12-18 13:54:25.309 [http-nio-9050-exec-5] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/posts/spring-boot-guide, ip=127.0.0.1
-2025-12-18 13:54:25.819 [http-nio-9050-exec-6] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
-2025-12-18 13:54:25.821 [http-nio-9050-exec-6] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /posts/react-tutorial(String), 127.0.0.1(String), Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1(String), https://twitter.com(String), 2025-12-18T13:54:25.423699400(LocalDateTime), 20251218(Integer), 2025121813(Integer), 2025-12-18T13:54:25.818171(LocalDateTime), 2025-12-18T13:54:25.818171(LocalDateTime), 0(Integer)
-2025-12-18 13:54:25.933 [http-nio-9050-exec-6] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
-2025-12-18 13:54:26.178 [http-nio-9050-exec-6] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/posts/react-tutorial, ip=127.0.0.1
-2025-12-18 13:54:26.875 [http-nio-9050-exec-8] DEBUG c.b.a.mapper.VisitRecordMapper.getRealtimeStats - ==>  Preparing: SELECT COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIps FROM visit_record WHERE visit_time >= ? AND deleted = 0
-2025-12-18 13:54:26.876 [http-nio-9050-exec-8] DEBUG c.b.a.mapper.VisitRecordMapper.getRealtimeStats - ==> Parameters: 2025-12-18T12:54:26.817045800(LocalDateTime)
-2025-12-18 13:54:26.970 [http-nio-9050-exec-8] DEBUG c.b.a.mapper.VisitRecordMapper.getRealtimeStats - <==      Total: 1
-2025-12-18 13:54:27.351 [http-nio-9050-exec-9] DEBUG c.b.analytics.mapper.VisitRecordMapper.getHotPages - ==>  Preparing: SELECT page_url as pageUrl, page_title as pageTitle, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY page_url, page_title ORDER BY visitCount DESC LIMIT ?
-2025-12-18 13:54:27.352 [http-nio-9050-exec-9] DEBUG c.b.analytics.mapper.VisitRecordMapper.getHotPages - ==> Parameters: 20251212(Integer), 20251218(Integer), 10(Integer)
-2025-12-18 13:54:27.413 [http-nio-9050-exec-9] DEBUG c.b.analytics.mapper.VisitRecordMapper.getHotPages - <==      Total: 10
-2025-12-18 13:54:27.589 [http-nio-9050-exec-10] DEBUG c.b.a.mapper.VisitRecordMapper.getRangeStats - ==>  Preparing: SELECT date_key as dateKey, COUNT(*) as totalVisits, COUNT(DISTINCT ip_address) as uniqueIps, COUNT(*) as pageViews FROM visit_record WHERE date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY date_key ORDER BY date_key
-2025-12-18 13:54:27.591 [http-nio-9050-exec-10] DEBUG c.b.a.mapper.VisitRecordMapper.getRangeStats - ==> Parameters: 20251210(Integer), 20251212(Integer)
-2025-12-18 13:54:27.646 [http-nio-9050-exec-10] DEBUG c.b.a.mapper.VisitRecordMapper.getRangeStats - <==      Total: 1
-2025-12-18 13:54:27.717 [http-nio-9050-exec-1] DEBUG c.b.a.mapper.VisitRecordMapper.getHourlyStats - ==>  Preparing: SELECT hour_key as hourKey, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key = ? AND deleted = 0 GROUP BY hour_key ORDER BY hour_key
-2025-12-18 13:54:27.718 [http-nio-9050-exec-1] DEBUG c.b.a.mapper.VisitRecordMapper.getHourlyStats - ==> Parameters: 20251212(Integer)
-2025-12-18 13:54:27.779 [http-nio-9050-exec-1] DEBUG c.b.a.mapper.VisitRecordMapper.getHourlyStats - <==      Total: 3
-2025-12-18 13:54:27.840 [http-nio-9050-exec-2] DEBUG c.b.a.mapper.VisitRecordMapper.getBrowserStats - ==>  Preparing: SELECT CASE WHEN user_agent LIKE '%Chrome%' AND user_agent NOT LIKE '%Edge%' THEN 'Chrome' WHEN user_agent LIKE '%Firefox%' THEN 'Firefox' WHEN user_agent LIKE '%Safari%' AND user_agent NOT LIKE '%Chrome%' THEN 'Safari' WHEN user_agent LIKE '%Edge%' THEN 'Edge' WHEN user_agent LIKE '%Opera%' OR user_agent LIKE '%OPR%' THEN 'Opera' WHEN user_agent LIKE '%MSIE%' OR user_agent LIKE '%Trident%' THEN 'Internet Explorer' WHEN user_agent LIKE '%MicroMessenger%' THEN 'WeChat' ELSE 'Other' END as browser, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key = ? AND deleted = 0 AND user_agent IS NOT NULL GROUP BY CASE WHEN user_agent LIKE '%Chrome%' AND user_agent NOT LIKE '%Edge%' THEN 'Chrome' WHEN user_agent LIKE '%Firefox%' THEN 'Firefox' WHEN user_agent LIKE '%Safari%' AND user_agent NOT LIKE '%Chrome%' THEN 'Safari' WHEN user_agent LIKE '%Edge%' THEN 'Edge' WHEN user_agent LIKE '%Opera%' OR user_agent LIKE '%OPR%' THEN 'Opera' WHEN user_agent LIKE '%MSIE%' OR user_agent LIKE '%Trident%' THEN 'Internet Explorer' WHEN user_agent LIKE '%MicroMessenger%' THEN 'WeChat' ELSE 'Other' END ORDER BY visitCount DESC
-2025-12-18 13:54:27.841 [http-nio-9050-exec-2] DEBUG c.b.a.mapper.VisitRecordMapper.getBrowserStats - ==> Parameters: 20251212(Integer)
-2025-12-18 13:54:27.932 [http-nio-9050-exec-2] DEBUG c.b.a.mapper.VisitRecordMapper.getBrowserStats - <==      Total: 3
-2025-12-18 13:54:27.990 [http-nio-9050-exec-3] DEBUG c.b.analytics.mapper.VisitRecordMapper.getOSStats - ==>  Preparing: SELECT CASE WHEN user_agent LIKE '%Windows NT 10%' THEN 'Windows 10' WHEN user_agent LIKE '%Windows NT 6.3%' THEN 'Windows 8.1' WHEN user_agent LIKE '%Windows NT 6.2%' THEN 'Windows 8' WHEN user_agent LIKE '%Windows NT 6.1%' THEN 'Windows 7' WHEN user_agent LIKE '%Windows NT%' THEN 'Windows' WHEN user_agent LIKE '%Mac OS X%' THEN 'macOS' WHEN user_agent LIKE '%iPhone OS%' OR user_agent LIKE '%iPad%' THEN 'iOS' WHEN user_agent LIKE '%Android%' THEN 'Android' WHEN user_agent LIKE '%Linux%' THEN 'Linux' ELSE 'Other' END as os, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key = ? AND deleted = 0 AND user_agent IS NOT NULL GROUP BY CASE WHEN user_agent LIKE '%Windows NT 10%' THEN 'Windows 10' WHEN user_agent LIKE '%Windows NT 6.3%' THEN 'Windows 8.1' WHEN user_agent LIKE '%Windows NT 6.2%' THEN 'Windows 8' WHEN user_agent LIKE '%Windows NT 6.1%' THEN 'Windows 7' WHEN user_agent LIKE '%Windows NT%' THEN 'Windows' WHEN user_agent LIKE '%Mac OS X%' THEN 'macOS' WHEN user_agent LIKE '%iPhone OS%' OR user_agent LIKE '%iPad%' THEN 'iOS' WHEN user_agent LIKE '%Android%' THEN 'Android' WHEN user_agent LIKE '%Linux%' THEN 'Linux' ELSE 'Other' END ORDER BY visitCount DESC
-2025-12-18 13:54:27.991 [http-nio-9050-exec-3] DEBUG c.b.analytics.mapper.VisitRecordMapper.getOSStats - ==> Parameters: 20251212(Integer)
-2025-12-18 13:54:28.048 [http-nio-9050-exec-3] DEBUG c.b.analytics.mapper.VisitRecordMapper.getOSStats - <==      Total: 3
-2025-12-18 13:54:28.102 [http-nio-9050-exec-4] DEBUG c.b.a.mapper.VisitRecordMapper.getRefererStats - ==>  Preparing: SELECT CASE WHEN referer IS NULL OR referer = '' THEN 'Direct' WHEN referer LIKE '%google%' THEN 'Google' WHEN referer LIKE '%baidu%' THEN 'Baidu' WHEN referer LIKE '%bing%' THEN 'Bing' WHEN referer LIKE '%yahoo%' THEN 'Yahoo' WHEN referer LIKE '%sogou%' THEN 'Sogou' WHEN referer LIKE '%so%' THEN '360' ELSE 'Other' END as refererDomain, referer as refererUrl, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY CASE WHEN referer IS NULL OR referer = '' THEN 'Direct' WHEN referer LIKE '%google%' THEN 'Google' WHEN referer LIKE '%baidu%' THEN 'Baidu' WHEN referer LIKE '%bing%' THEN 'Bing' WHEN referer LIKE '%yahoo%' THEN 'Yahoo' WHEN referer LIKE '%sogou%' THEN 'Sogou' WHEN referer LIKE '%so%' THEN '360' ELSE 'Other' END, referer ORDER BY visitCount DESC LIMIT ?
-2025-12-18 13:54:28.104 [http-nio-9050-exec-4] DEBUG c.b.a.mapper.VisitRecordMapper.getRefererStats - ==> Parameters: 20251212(Integer), 20251218(Integer), 10(Integer)
-2025-12-18 13:54:28.164 [http-nio-9050-exec-4] DEBUG c.b.a.mapper.VisitRecordMapper.getRefererStats - <==      Total: 9
-2025-12-18 13:54:28.235 [http-nio-9050-exec-5] DEBUG c.b.a.mapper.VisitRecordMapper.getDailyPageStats - ==>  Preparing: SELECT date_key as dateKey, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE page_url = ? AND date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY date_key ORDER BY date_key
-2025-12-18 13:54:28.235 [http-nio-9050-exec-5] DEBUG c.b.a.mapper.VisitRecordMapper.getDailyPageStats - ==> Parameters: /posts/java-tutorial(String), 20251212(Integer), 20251218(Integer)
-2025-12-18 13:54:28.293 [http-nio-9050-exec-5] DEBUG c.b.a.mapper.VisitRecordMapper.getDailyPageStats - <==      Total: 3
-2025-12-18 13:54:28.361 [http-nio-9050-exec-6] DEBUG c.b.a.mapper.VisitRecordMapper.getRegionStats - ==>  Preparing: SELECT ip_address as ipAddress, COUNT(*) as visitCount, MAX(visit_time) as lastVisitTime FROM visit_record WHERE date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY ip_address ORDER BY visitCount DESC LIMIT ?
-2025-12-18 13:54:28.362 [http-nio-9050-exec-6] DEBUG c.b.a.mapper.VisitRecordMapper.getRegionStats - ==> Parameters: 20251212(Integer), 20251218(Integer), 10(Integer)
-2025-12-18 13:54:28.423 [http-nio-9050-exec-6] DEBUG c.b.a.mapper.VisitRecordMapper.getRegionStats - <==      Total: 10
-2025-12-18 13:54:28.963 [http-nio-9050-exec-7] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
-2025-12-18 13:54:28.966 [http-nio-9050-exec-7] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /posts/vue-tutorial(String), 127.0.0.1(String), Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36(String), https://stackoverflow.com(String), 2025-12-18T13:54:28.578825900(LocalDateTime), 20251218(Integer), 2025121813(Integer), 2025-12-18T13:54:28.963834500(LocalDateTime), 2025-12-18T13:54:28.963834500(LocalDateTime), 0(Integer)
-2025-12-18 13:54:29.078 [http-nio-9050-exec-7] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
-2025-12-18 13:54:29.300 [http-nio-9050-exec-7] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/posts/vue-tutorial, ip=127.0.0.1
-2025-12-18 13:54:29.825 [http-nio-9050-exec-8] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
-2025-12-18 13:54:29.826 [http-nio-9050-exec-8] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /about(String), 127.0.0.1(String), Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0(String), (String), 2025-12-18T13:54:29.417439(LocalDateTime), 20251218(Integer), 2025121813(Integer), 2025-12-18T13:54:29.824271700(LocalDateTime), 2025-12-18T13:54:29.824271700(LocalDateTime), 0(Integer)
-2025-12-18 13:54:29.937 [http-nio-9050-exec-8] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
-2025-12-18 13:54:30.157 [http-nio-9050-exec-8] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/about, ip=127.0.0.1
-2025-12-18 13:54:30.657 [http-nio-9050-exec-9] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
-2025-12-18 13:54:30.659 [http-nio-9050-exec-9] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /contact(String), 127.0.0.1(String), Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15(String), https://localhost:9050(String), 2025-12-18T13:54:30.263900100(LocalDateTime), 20251218(Integer), 2025121813(Integer), 2025-12-18T13:54:30.656902800(LocalDateTime), 2025-12-18T13:54:30.656902800(LocalDateTime), 0(Integer)
-2025-12-18 13:54:30.769 [http-nio-9050-exec-9] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
-2025-12-18 13:54:30.992 [http-nio-9050-exec-9] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/contact, ip=127.0.0.1
-2025-12-18 13:59:30.401 [lettuce-nioEventLoop-4-1] INFO  io.lettuce.core.protocol.CommandHandler - null Unexpected exception during request: java.net.SocketException: Connection reset
+2025-12-19 16:38:07.522 [background-preinit] [] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-12-19 16:38:07.531 [main] [] INFO  com.blog.analytics.BlogAnalyticsApplication - Starting BlogAnalyticsApplication using Java 17.0.16 on zhnagqi17 with PID 19900 (D:\project\github\hoppinzq-blog-back\target\classes started by zhangqi17 in D:\project\github\hoppinzq-blog-back)
+2025-12-19 16:38:07.535 [main] [] DEBUG com.blog.analytics.BlogAnalyticsApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-19 16:38:07.536 [main] [] INFO  com.blog.analytics.BlogAnalyticsApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-19 16:38:09.422 [main] [] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-19 16:38:09.426 [main] [] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-19 16:38:09.481 [main] [] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2025-12-19 16:38:10.590 [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9050 (http)
+2025-12-19 16:38:10.603 [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9050"]
+2025-12-19 16:38:10.605 [main] [] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-19 16:38:10.605 [main] [] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-12-19 16:38:10.987 [main] [] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-19 16:38:10.987 [main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3367 ms
+2025-12-19 16:38:12.877 [main] [] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-12-19 16:38:12.916 [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9050"]
+2025-12-19 16:38:12.967 [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9050 (http) with context path ''
+2025-12-19 16:38:12.991 [main] [] INFO  com.blog.analytics.BlogAnalyticsApplication - Started BlogAnalyticsApplication in 6.135 seconds (JVM running for 8.212)
+2025-12-19 16:38:12.997 [main] [] INFO  com.blog.analytics.config.DatabaseTest - 数据源类型: com.zaxxer.hikari.HikariDataSource
+2025-12-19 16:38:12.999 [main] [] INFO  com.blog.analytics.config.DatabaseTest - 测试数据库连接...
+2025-12-19 16:38:13.006 [main] [] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Starting...
+2025-12-19 16:38:13.717 [main] [] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Start completed.
+2025-12-19 16:38:13.813 [main] [] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接测试成功，返回值: 1
+2025-12-19 16:38:13.928 [main] [] INFO  com.blog.analytics.config.DatabaseTest - MySQL版本: 8.0.24
+2025-12-19 16:38:14.074 [main] [] INFO  com.blog.analytics.config.DatabaseTest - 数据库表创建测试成功
+2025-12-19 16:38:14.204 [main] [] INFO  com.blog.analytics.config.DatabaseTest - 测试表清理完成
+2025-12-19 16:38:14.204 [main] [] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接配置验证通过！
+2025-12-19 16:38:15.431 [http-nio-9050-exec-1] [] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-19 16:38:15.431 [http-nio-9050-exec-1] [] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-19 16:38:15.432 [http-nio-9050-exec-1] [] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-19 16:38:15.455 [http-nio-9050-exec-1] [08a833db28914757af4335f57dfa3f7f] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/analytics/health
+2025-12-19 16:38:15.593 [http-nio-9050-exec-1] [08a833db28914757af4335f57dfa3f7f] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/analytics/health
+2025-12-19 16:38:15.648 [http-nio-9050-exec-2] [480d46fc169a49c09de1275765b46e47] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/analytics/info
+2025-12-19 16:38:15.657 [http-nio-9050-exec-2] [480d46fc169a49c09de1275765b46e47] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/analytics/info
+2025-12-19 16:38:15.740 [http-nio-9050-exec-3] [a00f2b5889be4c118d4e45e99fae06e9] DEBUG com.blog.analytics.config.LogInterceptor - Request received: POST /api/analytics/visit
+2025-12-19 16:38:17.792 [http-nio-9050-exec-3] [a00f2b5889be4c118d4e45e99fae06e9] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2025-12-19 16:38:17.848 [http-nio-9050-exec-3] [a00f2b5889be4c118d4e45e99fae06e9] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /posts/java-tutorial(String), 127.0.0.1(String), Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36(String), https://google.com(String), 2025-12-19T16:38:15.997681800(LocalDateTime), 20251219(Integer), 2025121916(Integer), 2025-12-19T16:38:17.782183300(LocalDateTime), 2025-12-19T16:38:17.782183300(LocalDateTime), 0(Integer)
+2025-12-19 16:38:17.989 [http-nio-9050-exec-3] [a00f2b5889be4c118d4e45e99fae06e9] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
+2025-12-19 16:38:18.226 [http-nio-9050-exec-3] [a00f2b5889be4c118d4e45e99fae06e9] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/posts/java-tutorial, ip=127.0.0.1
+2025-12-19 16:38:18.227 [http-nio-9050-exec-3] [a00f2b5889be4c118d4e45e99fae06e9] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: POST /api/analytics/visit
+2025-12-19 16:38:18.286 [http-nio-9050-exec-4] [b65e96b7d2834ba194aa4be05108ed75] DEBUG com.blog.analytics.config.LogInterceptor - Request received: POST /api/analytics/visit
+2025-12-19 16:38:18.758 [http-nio-9050-exec-4] [b65e96b7d2834ba194aa4be05108ed75] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2025-12-19 16:38:18.760 [http-nio-9050-exec-4] [b65e96b7d2834ba194aa4be05108ed75] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /(String), 127.0.0.1(String), Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/53 7.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36(String), https://baidu.com(String), 2025-12-19T16:38:18.340117100(LocalDateTime), 20251219(Integer), 2025121916(Integer), 2025-12-19T16:38:18.757977500(LocalDateTime), 2025-12-19T16:38:18.757977500(LocalDateTime), 0(Integer)
+2025-12-19 16:38:18.864 [http-nio-9050-exec-4] [b65e96b7d2834ba194aa4be05108ed75] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
+2025-12-19 16:38:19.088 [http-nio-9050-exec-4] [b65e96b7d2834ba194aa4be05108ed75] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/, ip=127.0.0.1
+2025-12-19 16:38:19.090 [http-nio-9050-exec-4] [b65e96b7d2834ba194aa4be05108ed75] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: POST /api/analytics/visit
+2025-12-19 16:38:19.149 [http-nio-9050-exec-5] [2cc3c8e90ce6401f9f43e783654eab38] DEBUG com.blog.analytics.config.LogInterceptor - Request received: POST /api/analytics/visit
+2025-12-19 16:38:19.622 [http-nio-9050-exec-5] [2cc3c8e90ce6401f9f43e783654eab38] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2025-12-19 16:38:19.625 [http-nio-9050-exec-5] [2cc3c8e90ce6401f9f43e783654eab38] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /posts/spring-boot-guide(String), 127.0.0.1(String), Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36(String), https://github.com(String), 2025-12-19T16:38:19.202637900(LocalDateTime), 20251219(Integer), 2025121916(Integer), 2025-12-19T16:38:19.621290800(LocalDateTime), 2025-12-19T16:38:19.621290800(LocalDateTime), 0(Integer)
+2025-12-19 16:38:19.727 [http-nio-9050-exec-5] [2cc3c8e90ce6401f9f43e783654eab38] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
+2025-12-19 16:38:20.018 [http-nio-9050-exec-5] [2cc3c8e90ce6401f9f43e783654eab38] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/posts/spring-boot-guide, ip=127.0.0.1
+2025-12-19 16:38:20.020 [http-nio-9050-exec-5] [2cc3c8e90ce6401f9f43e783654eab38] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: POST /api/analytics/visit
+2025-12-19 16:38:20.083 [http-nio-9050-exec-6] [e04907d54c1c4e57893699360ebdb58a] DEBUG com.blog.analytics.config.LogInterceptor - Request received: POST /api/analytics/visit
+2025-12-19 16:38:20.568 [http-nio-9050-exec-6] [e04907d54c1c4e57893699360ebdb58a] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2025-12-19 16:38:20.569 [http-nio-9050-exec-6] [e04907d54c1c4e57893699360ebdb58a] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /posts/react-tutorial(String), 127.0.0.1(String), Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1(String), https://twitter.com(String), 2025-12-19T16:38:20.136432900(LocalDateTime), 20251219(Integer), 2025121916(Integer), 2025-12-19T16:38:20.567187300(LocalDateTime), 2025-12-19T16:38:20.567187300(LocalDateTime), 0(Integer)
+2025-12-19 16:38:20.679 [http-nio-9050-exec-6] [e04907d54c1c4e57893699360ebdb58a] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
+2025-12-19 16:38:20.903 [http-nio-9050-exec-6] [e04907d54c1c4e57893699360ebdb58a] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/posts/react-tutorial, ip=127.0.0.1
+2025-12-19 16:38:20.903 [http-nio-9050-exec-6] [e04907d54c1c4e57893699360ebdb58a] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: POST /api/analytics/visit
+2025-12-19 16:38:20.945 [http-nio-9050-exec-7] [8f291e8c49844e6d966f137956e2e700] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/analytics/stats/today
+2025-12-19 16:38:21.185 [http-nio-9050-exec-7] [8f291e8c49844e6d966f137956e2e700] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/analytics/stats/today
+2025-12-19 16:38:21.248 [http-nio-9050-exec-8] [1a1462f393e8498d86f57c39c87ed0e9] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/analytics/stats/realtime
+2025-12-19 16:38:21.562 [http-nio-9050-exec-8] [1a1462f393e8498d86f57c39c87ed0e9] DEBUG c.b.a.mapper.VisitRecordMapper.getRealtimeStats - ==>  Preparing: SELECT COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIps FROM visit_record WHERE visit_time >= ? AND deleted = 0
+2025-12-19 16:38:21.562 [http-nio-9050-exec-8] [1a1462f393e8498d86f57c39c87ed0e9] DEBUG c.b.a.mapper.VisitRecordMapper.getRealtimeStats - ==> Parameters: 2025-12-19T15:38:21.505342(LocalDateTime)
+2025-12-19 16:38:21.640 [http-nio-9050-exec-8] [1a1462f393e8498d86f57c39c87ed0e9] DEBUG c.b.a.mapper.VisitRecordMapper.getRealtimeStats - <==      Total: 1
+2025-12-19 16:38:21.958 [http-nio-9050-exec-8] [1a1462f393e8498d86f57c39c87ed0e9] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/analytics/stats/realtime
+2025-12-19 16:38:22.059 [http-nio-9050-exec-9] [7ac52f339c4844109f5fc6533b78cdc4] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/analytics/stats/hot-pages
+2025-12-19 16:38:22.070 [http-nio-9050-exec-9] [7ac52f339c4844109f5fc6533b78cdc4] DEBUG c.b.analytics.mapper.VisitRecordMapper.getHotPages - ==>  Preparing: SELECT page_url as pageUrl, page_title as pageTitle, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY page_url, page_title ORDER BY visitCount DESC LIMIT ?
+2025-12-19 16:38:22.071 [http-nio-9050-exec-9] [7ac52f339c4844109f5fc6533b78cdc4] DEBUG c.b.analytics.mapper.VisitRecordMapper.getHotPages - ==> Parameters: 20251213(Integer), 20251219(Integer), 10(Integer)
+2025-12-19 16:38:22.135 [http-nio-9050-exec-9] [7ac52f339c4844109f5fc6533b78cdc4] DEBUG c.b.analytics.mapper.VisitRecordMapper.getHotPages - <==      Total: 10
+2025-12-19 16:38:22.139 [http-nio-9050-exec-9] [7ac52f339c4844109f5fc6533b78cdc4] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/analytics/stats/hot-pages
+2025-12-19 16:38:22.187 [http-nio-9050-exec-10] [a707d7c3b0d64a44ae8b2fdb84b45678] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/analytics/stats/range
+2025-12-19 16:38:22.198 [http-nio-9050-exec-10] [a707d7c3b0d64a44ae8b2fdb84b45678] DEBUG c.b.a.mapper.VisitRecordMapper.getRangeStats - ==>  Preparing: SELECT date_key as dateKey, COUNT(*) as totalVisits, COUNT(DISTINCT ip_address) as uniqueIps, COUNT(*) as pageViews FROM visit_record WHERE date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY date_key ORDER BY date_key
+2025-12-19 16:38:22.200 [http-nio-9050-exec-10] [a707d7c3b0d64a44ae8b2fdb84b45678] DEBUG c.b.a.mapper.VisitRecordMapper.getRangeStats - ==> Parameters: 20251210(Integer), 20251212(Integer)
+2025-12-19 16:38:22.253 [http-nio-9050-exec-10] [a707d7c3b0d64a44ae8b2fdb84b45678] DEBUG c.b.a.mapper.VisitRecordMapper.getRangeStats - <==      Total: 1
+2025-12-19 16:38:22.264 [http-nio-9050-exec-10] [a707d7c3b0d64a44ae8b2fdb84b45678] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/analytics/stats/range
+2025-12-19 16:38:22.368 [http-nio-9050-exec-1] [1a274733fd5247cd80c345f73b3823b7] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/analytics/stats/hourly
+2025-12-19 16:38:22.374 [http-nio-9050-exec-1] [1a274733fd5247cd80c345f73b3823b7] DEBUG c.b.a.mapper.VisitRecordMapper.getHourlyStats - ==>  Preparing: SELECT hour_key as hourKey, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key = ? AND deleted = 0 GROUP BY hour_key ORDER BY hour_key
+2025-12-19 16:38:22.375 [http-nio-9050-exec-1] [1a274733fd5247cd80c345f73b3823b7] DEBUG c.b.a.mapper.VisitRecordMapper.getHourlyStats - ==> Parameters: 20251212(Integer)
+2025-12-19 16:38:22.430 [http-nio-9050-exec-1] [1a274733fd5247cd80c345f73b3823b7] DEBUG c.b.a.mapper.VisitRecordMapper.getHourlyStats - <==      Total: 3
+2025-12-19 16:38:22.432 [http-nio-9050-exec-1] [1a274733fd5247cd80c345f73b3823b7] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/analytics/stats/hourly
+2025-12-19 16:38:22.573 [http-nio-9050-exec-2] [46d387bb8d504781af9d76827ca03876] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/analytics/stats/browser
+2025-12-19 16:38:22.575 [http-nio-9050-exec-2] [46d387bb8d504781af9d76827ca03876] DEBUG c.b.a.mapper.VisitRecordMapper.getBrowserStats - ==>  Preparing: SELECT CASE WHEN user_agent LIKE '%Chrome%' AND user_agent NOT LIKE '%Edge%' THEN 'Chrome' WHEN user_agent LIKE '%Firefox%' THEN 'Firefox' WHEN user_agent LIKE '%Safari%' AND user_agent NOT LIKE '%Chrome%' THEN 'Safari' WHEN user_agent LIKE '%Edge%' THEN 'Edge' WHEN user_agent LIKE '%Opera%' OR user_agent LIKE '%OPR%' THEN 'Opera' WHEN user_agent LIKE '%MSIE%' OR user_agent LIKE '%Trident%' THEN 'Internet Explorer' WHEN user_agent LIKE '%MicroMessenger%' THEN 'WeChat' ELSE 'Other' END as browser, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key = ? AND deleted = 0 AND user_agent IS NOT NULL GROUP BY CASE WHEN user_agent LIKE '%Chrome%' AND user_agent NOT LIKE '%Edge%' THEN 'Chrome' WHEN user_agent LIKE '%Firefox%' THEN 'Firefox' WHEN user_agent LIKE '%Safari%' AND user_agent NOT LIKE '%Chrome%' THEN 'Safari' WHEN user_agent LIKE '%Edge%' THEN 'Edge' WHEN user_agent LIKE '%Opera%' OR user_agent LIKE '%OPR%' THEN 'Opera' WHEN user_agent LIKE '%MSIE%' OR user_agent LIKE '%Trident%' THEN 'Internet Explorer' WHEN user_agent LIKE '%MicroMessenger%' THEN 'WeChat' ELSE 'Other' END ORDER BY visitCount DESC
+2025-12-19 16:38:22.576 [http-nio-9050-exec-2] [46d387bb8d504781af9d76827ca03876] DEBUG c.b.a.mapper.VisitRecordMapper.getBrowserStats - ==> Parameters: 20251212(Integer)
+2025-12-19 16:38:22.637 [http-nio-9050-exec-2] [46d387bb8d504781af9d76827ca03876] DEBUG c.b.a.mapper.VisitRecordMapper.getBrowserStats - <==      Total: 3
+2025-12-19 16:38:22.639 [http-nio-9050-exec-2] [46d387bb8d504781af9d76827ca03876] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/analytics/stats/browser
+2025-12-19 16:38:22.684 [http-nio-9050-exec-3] [a0bd6fb6fe8640d0a18e50aa3ef34582] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/analytics/stats/os
+2025-12-19 16:38:22.687 [http-nio-9050-exec-3] [a0bd6fb6fe8640d0a18e50aa3ef34582] DEBUG c.b.analytics.mapper.VisitRecordMapper.getOSStats - ==>  Preparing: SELECT CASE WHEN user_agent LIKE '%Windows NT 10%' THEN 'Windows 10' WHEN user_agent LIKE '%Windows NT 6.3%' THEN 'Windows 8.1' WHEN user_agent LIKE '%Windows NT 6.2%' THEN 'Windows 8' WHEN user_agent LIKE '%Windows NT 6.1%' THEN 'Windows 7' WHEN user_agent LIKE '%Windows NT%' THEN 'Windows' WHEN user_agent LIKE '%Mac OS X%' THEN 'macOS' WHEN user_agent LIKE '%iPhone OS%' OR user_agent LIKE '%iPad%' THEN 'iOS' WHEN user_agent LIKE '%Android%' THEN 'Android' WHEN user_agent LIKE '%Linux%' THEN 'Linux' ELSE 'Other' END as os, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key = ? AND deleted = 0 AND user_agent IS NOT NULL GROUP BY CASE WHEN user_agent LIKE '%Windows NT 10%' THEN 'Windows 10' WHEN user_agent LIKE '%Windows NT 6.3%' THEN 'Windows 8.1' WHEN user_agent LIKE '%Windows NT 6.2%' THEN 'Windows 8' WHEN user_agent LIKE '%Windows NT 6.1%' THEN 'Windows 7' WHEN user_agent LIKE '%Windows NT%' THEN 'Windows' WHEN user_agent LIKE '%Mac OS X%' THEN 'macOS' WHEN user_agent LIKE '%iPhone OS%' OR user_agent LIKE '%iPad%' THEN 'iOS' WHEN user_agent LIKE '%Android%' THEN 'Android' WHEN user_agent LIKE '%Linux%' THEN 'Linux' ELSE 'Other' END ORDER BY visitCount DESC
+2025-12-19 16:38:22.688 [http-nio-9050-exec-3] [a0bd6fb6fe8640d0a18e50aa3ef34582] DEBUG c.b.analytics.mapper.VisitRecordMapper.getOSStats - ==> Parameters: 20251212(Integer)
+2025-12-19 16:38:22.742 [http-nio-9050-exec-3] [a0bd6fb6fe8640d0a18e50aa3ef34582] DEBUG c.b.analytics.mapper.VisitRecordMapper.getOSStats - <==      Total: 3
+2025-12-19 16:38:22.744 [http-nio-9050-exec-3] [a0bd6fb6fe8640d0a18e50aa3ef34582] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/analytics/stats/os
+2025-12-19 16:38:22.988 [http-nio-9050-exec-4] [7369377fcb594959bb70e9e2b1deecb4] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/analytics/stats/referer
+2025-12-19 16:38:22.993 [http-nio-9050-exec-4] [7369377fcb594959bb70e9e2b1deecb4] DEBUG c.b.a.mapper.VisitRecordMapper.getRefererStats - ==>  Preparing: SELECT CASE WHEN referer IS NULL OR referer = '' THEN 'Direct' WHEN referer LIKE '%google%' THEN 'Google' WHEN referer LIKE '%baidu%' THEN 'Baidu' WHEN referer LIKE '%bing%' THEN 'Bing' WHEN referer LIKE '%yahoo%' THEN 'Yahoo' WHEN referer LIKE '%sogou%' THEN 'Sogou' WHEN referer LIKE '%so%' THEN '360' ELSE 'Other' END as refererDomain, referer as refererUrl, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY CASE WHEN referer IS NULL OR referer = '' THEN 'Direct' WHEN referer LIKE '%google%' THEN 'Google' WHEN referer LIKE '%baidu%' THEN 'Baidu' WHEN referer LIKE '%bing%' THEN 'Bing' WHEN referer LIKE '%yahoo%' THEN 'Yahoo' WHEN referer LIKE '%sogou%' THEN 'Sogou' WHEN referer LIKE '%so%' THEN '360' ELSE 'Other' END, referer ORDER BY visitCount DESC LIMIT ?
+2025-12-19 16:38:22.994 [http-nio-9050-exec-4] [7369377fcb594959bb70e9e2b1deecb4] DEBUG c.b.a.mapper.VisitRecordMapper.getRefererStats - ==> Parameters: 20251213(Integer), 20251219(Integer), 10(Integer)
+2025-12-19 16:38:23.051 [http-nio-9050-exec-4] [7369377fcb594959bb70e9e2b1deecb4] DEBUG c.b.a.mapper.VisitRecordMapper.getRefererStats - <==      Total: 9
+2025-12-19 16:38:23.055 [http-nio-9050-exec-4] [7369377fcb594959bb70e9e2b1deecb4] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/analytics/stats/referer
+2025-12-19 16:38:23.395 [http-nio-9050-exec-5] [bd99b413a3d64cadabfe1d0939976dd0] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/analytics/stats/page
+2025-12-19 16:38:23.407 [http-nio-9050-exec-5] [bd99b413a3d64cadabfe1d0939976dd0] DEBUG c.b.a.mapper.VisitRecordMapper.getDailyPageStats - ==>  Preparing: SELECT date_key as dateKey, COUNT(*) as visitCount, COUNT(DISTINCT ip_address) as uniqueIpCount FROM visit_record WHERE page_url = ? AND date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY date_key ORDER BY date_key
+2025-12-19 16:38:23.408 [http-nio-9050-exec-5] [bd99b413a3d64cadabfe1d0939976dd0] DEBUG c.b.a.mapper.VisitRecordMapper.getDailyPageStats - ==> Parameters: /posts/java-tutorial(String), 20251213(Integer), 20251219(Integer)
+2025-12-19 16:38:23.467 [http-nio-9050-exec-5] [bd99b413a3d64cadabfe1d0939976dd0] DEBUG c.b.a.mapper.VisitRecordMapper.getDailyPageStats - <==      Total: 3
+2025-12-19 16:38:23.472 [http-nio-9050-exec-5] [bd99b413a3d64cadabfe1d0939976dd0] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/analytics/stats/page
+2025-12-19 16:38:23.612 [http-nio-9050-exec-6] [07eb161551284753b3b185a1e66294f8] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/analytics/stats/region
+2025-12-19 16:38:23.614 [http-nio-9050-exec-6] [07eb161551284753b3b185a1e66294f8] DEBUG c.b.a.mapper.VisitRecordMapper.getRegionStats - ==>  Preparing: SELECT ip_address as ipAddress, COUNT(*) as visitCount, MAX(visit_time) as lastVisitTime FROM visit_record WHERE date_key BETWEEN ? AND ? AND deleted = 0 GROUP BY ip_address ORDER BY visitCount DESC LIMIT ?
+2025-12-19 16:38:23.615 [http-nio-9050-exec-6] [07eb161551284753b3b185a1e66294f8] DEBUG c.b.a.mapper.VisitRecordMapper.getRegionStats - ==> Parameters: 20251213(Integer), 20251219(Integer), 10(Integer)
+2025-12-19 16:38:23.674 [http-nio-9050-exec-6] [07eb161551284753b3b185a1e66294f8] DEBUG c.b.a.mapper.VisitRecordMapper.getRegionStats - <==      Total: 10
+2025-12-19 16:38:23.679 [http-nio-9050-exec-6] [07eb161551284753b3b185a1e66294f8] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/analytics/stats/region
+2025-12-19 16:38:23.782 [http-nio-9050-exec-7] [9383b10443204559ae729d57aab9252d] DEBUG com.blog.analytics.config.LogInterceptor - Request received: POST /api/analytics/visit
+2025-12-19 16:38:24.249 [http-nio-9050-exec-7] [9383b10443204559ae729d57aab9252d] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2025-12-19 16:38:24.250 [http-nio-9050-exec-7] [9383b10443204559ae729d57aab9252d] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /posts/vue-tutorial(String), 127.0.0.1(String), Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36(String), https://stackoverflow.com(String), 2025-12-19T16:38:23.842103400(LocalDateTime), 20251219(Integer), 2025121916(Integer), 2025-12-19T16:38:24.249511300(LocalDateTime), 2025-12-19T16:38:24.249511300(LocalDateTime), 0(Integer)
+2025-12-19 16:38:24.355 [http-nio-9050-exec-7] [9383b10443204559ae729d57aab9252d] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
+2025-12-19 16:38:24.582 [http-nio-9050-exec-7] [9383b10443204559ae729d57aab9252d] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/posts/vue-tutorial, ip=127.0.0.1
+2025-12-19 16:38:24.583 [http-nio-9050-exec-7] [9383b10443204559ae729d57aab9252d] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: POST /api/analytics/visit
+2025-12-19 16:38:24.694 [http-nio-9050-exec-8] [d7ce37bfad974b38a65f82af23fcba55] DEBUG com.blog.analytics.config.LogInterceptor - Request received: POST /api/analytics/visit
+2025-12-19 16:38:25.173 [http-nio-9050-exec-8] [d7ce37bfad974b38a65f82af23fcba55] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2025-12-19 16:38:25.174 [http-nio-9050-exec-8] [d7ce37bfad974b38a65f82af23fcba55] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /about(String), 127.0.0.1(String), Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0(String), (String), 2025-12-19T16:38:24.750710600(LocalDateTime), 20251219(Integer), 2025121916(Integer), 2025-12-19T16:38:25.172248900(LocalDateTime), 2025-12-19T16:38:25.172248900(LocalDateTime), 0(Integer)
+2025-12-19 16:38:25.281 [http-nio-9050-exec-8] [d7ce37bfad974b38a65f82af23fcba55] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
+2025-12-19 16:38:25.506 [http-nio-9050-exec-8] [d7ce37bfad974b38a65f82af23fcba55] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/about, ip=127.0.0.1
+2025-12-19 16:38:25.508 [http-nio-9050-exec-8] [d7ce37bfad974b38a65f82af23fcba55] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: POST /api/analytics/visit
+2025-12-19 16:38:25.676 [http-nio-9050-exec-9] [d725ee2d972f432c89f33a3c7b01cdde] DEBUG com.blog.analytics.config.LogInterceptor - Request received: POST /api/analytics/visit
+2025-12-19 16:38:26.138 [http-nio-9050-exec-9] [d725ee2d972f432c89f33a3c7b01cdde] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==>  Preparing: INSERT INTO visit_record ( page_url, ip_address, user_agent, referer, visit_time, date_key, hour_key, created_at, updated_at, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2025-12-19 16:38:26.139 [http-nio-9050-exec-9] [d725ee2d972f432c89f33a3c7b01cdde] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - ==> Parameters: /contact(String), 127.0.0.1(String), Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15(String), https://localhost:9050(String), 2025-12-19T16:38:25.728791300(LocalDateTime), 20251219(Integer), 2025121916(Integer), 2025-12-19T16:38:26.137739(LocalDateTime), 2025-12-19T16:38:26.137739(LocalDateTime), 0(Integer)
+2025-12-19 16:38:26.268 [http-nio-9050-exec-9] [d725ee2d972f432c89f33a3c7b01cdde] DEBUG com.blog.analytics.mapper.VisitRecordMapper.insert - <==    Updates: 1
+2025-12-19 16:38:26.494 [http-nio-9050-exec-9] [d725ee2d972f432c89f33a3c7b01cdde] DEBUG com.blog.analytics.controller.AnalyticsController - 记录访问成功: pageUrl=/contact, ip=127.0.0.1
+2025-12-19 16:38:26.495 [http-nio-9050-exec-9] [d725ee2d972f432c89f33a3c7b01cdde] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: POST /api/analytics/visit
+2025-12-19 16:38:26.852 [http-nio-9050-exec-10] [4408ea793f974f7c93534aa02aca9496] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/proxy/weather
+2025-12-19 16:38:27.332 [http-nio-9050-exec-10] [4408ea793f974f7c93534aa02aca9496] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/proxy/weather
+2025-12-19 16:38:27.455 [http-nio-9050-exec-1] [973ab7e18b8b42159520a9f4e8883928] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/proxy/weather
+2025-12-19 16:38:27.600 [http-nio-9050-exec-1] [973ab7e18b8b42159520a9f4e8883928] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/proxy/weather
+2025-12-19 16:38:27.726 [http-nio-9050-exec-2] [16ef32f777584cf1a0520a6dea2ed733] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/proxy/horoscope
+2025-12-19 16:38:27.937 [http-nio-9050-exec-2] [16ef32f777584cf1a0520a6dea2ed733] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/proxy/horoscope
+2025-12-19 16:38:28.040 [http-nio-9050-exec-3] [69d58e15f8b1475a8ee7e1900f0a83ff] DEBUG com.blog.analytics.config.LogInterceptor - Request received: GET /api/proxy/horoscope
+2025-12-19 16:38:28.078 [http-nio-9050-exec-3] [69d58e15f8b1475a8ee7e1900f0a83ff] DEBUG com.blog.analytics.config.LogInterceptor - Request completed: GET /api/proxy/horoscope
+2025-12-19 16:48:26.560 [lettuce-nioEventLoop-4-1] [] INFO  io.lettuce.core.protocol.CommandHandler - null Unexpected exception during request: java.net.SocketException: Connection reset
 java.net.SocketException: Connection reset
 	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
 	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
@@ -95,55 +144,63 @@ java.net.SocketException: Connection reset
 	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:840)
-2025-12-18 13:59:30.504 [lettuce-eventExecutorLoop-1-4] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was /175.178.115.82:6379
-2025-12-18 13:59:30.701 [lettuce-nioEventLoop-4-2] INFO  io.lettuce.core.protocol.ReconnectionHandler - Reconnected to 175.178.115.82/<unresolved>:6379
-2025-12-18 14:02:25.853 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown initiated...
-2025-12-18 14:02:25.867 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown completed.
-2025-12-18 17:23:26.297 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Starting BlogAnalyticsApplication v1.0.0-SNAPSHOT using Java 17.0.16 on zhnagqi17 with PID 34028 (D:\project\github\hoppinzq-blog-back\target\hoppinzq-blog-back-1.0.0-SNAPSHOT.jar started by zhangqi17 in D:\project\github\hoppinzq-blog-back)
-2025-12-18 17:23:26.308 [main] DEBUG com.blog.analytics.BlogAnalyticsApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
-2025-12-18 17:23:26.309 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-18 17:23:31.364 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-12-18 17:23:31.389 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-12-18 17:23:31.553 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 0 Redis repository interfaces.
-2025-12-18 17:23:37.495 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9050 (http)
-2025-12-18 17:23:37.530 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-12-18 17:23:37.532 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
-2025-12-18 17:23:37.858 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-12-18 17:23:37.859 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 11314 ms
-2025-12-18 17:23:49.895 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
-2025-12-18 17:23:50.415 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9050 (http) with context path ''
-2025-12-18 17:23:50.666 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Started BlogAnalyticsApplication in 26.205 seconds (JVM running for 27.373)
-2025-12-18 17:23:51.050 [main] INFO  com.blog.analytics.config.DatabaseTest - ����Դ����: com.zaxxer.hikari.HikariDataSource
-2025-12-18 17:23:51.060 [main] INFO  com.blog.analytics.config.DatabaseTest - �������ݿ�����...
-2025-12-18 17:23:51.100 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Starting...
-2025-12-18 17:23:53.207 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Start completed.
-2025-12-18 17:23:53.488 [main] INFO  com.blog.analytics.config.DatabaseTest - ���ݿ����Ӳ��Գɹ�������ֵ: 1
-2025-12-18 17:23:53.543 [main] INFO  com.blog.analytics.config.DatabaseTest - MySQL�汾: 8.0.24
-2025-12-18 17:23:53.860 [main] INFO  com.blog.analytics.config.DatabaseTest - ���ݿ���������Գɹ�
-2025-12-18 17:23:54.046 [main] INFO  com.blog.analytics.config.DatabaseTest - ���Ա��������
-2025-12-18 17:23:54.049 [main] INFO  com.blog.analytics.config.DatabaseTest - ���ݿ�����������֤ͨ����
-2025-12-18 17:34:30.415 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Starting BlogAnalyticsApplication using Java 17.0.16 on zhnagqi17 with PID 8500 (D:\project\github\hoppinzq-blog-back\target\classes started by zhangqi17 in D:\project\github\hoppinzq-blog-back)
-2025-12-18 17:34:30.421 [main] DEBUG com.blog.analytics.BlogAnalyticsApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
-2025-12-18 17:34:30.423 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-18 17:34:33.291 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-12-18 17:34:33.299 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-12-18 17:34:33.371 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
-2025-12-18 17:34:35.298 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9050 (http)
-2025-12-18 17:34:35.326 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-12-18 17:34:35.326 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
-2025-12-18 17:34:35.960 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-12-18 17:34:35.961 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5297 ms
-2025-12-18 17:34:39.504 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
-2025-12-18 17:34:39.622 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9050 (http) with context path ''
-2025-12-18 17:34:39.655 [main] INFO  com.blog.analytics.BlogAnalyticsApplication - Started BlogAnalyticsApplication in 10.665 seconds (JVM running for 13.976)
-2025-12-18 17:34:39.666 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据源类型: com.zaxxer.hikari.HikariDataSource
-2025-12-18 17:34:39.668 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试数据库连接...
-2025-12-18 17:34:39.675 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Starting...
-2025-12-18 17:34:40.508 [main] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Start completed.
-2025-12-18 17:34:40.625 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接测试成功，返回值: 1
-2025-12-18 17:34:40.673 [main] INFO  com.blog.analytics.config.DatabaseTest - MySQL版本: 8.0.24
-2025-12-18 17:34:40.804 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库表创建测试成功
-2025-12-18 17:34:40.933 [main] INFO  com.blog.analytics.config.DatabaseTest - 测试表清理完成
-2025-12-18 17:34:40.934 [main] INFO  com.blog.analytics.config.DatabaseTest - 数据库连接配置验证通过！
-2025-12-18 17:34:52.526 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown initiated...
-2025-12-18 17:34:52.537 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown completed.
+2025-12-19 16:48:26.605 [lettuce-eventExecutorLoop-1-4] [] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was /175.178.115.82:6379
+2025-12-19 16:48:26.809 [lettuce-nioEventLoop-4-2] [] INFO  io.lettuce.core.protocol.ReconnectionHandler - Reconnected to 175.178.115.82/<unresolved>:6379
+2025-12-19 17:05:00.021 [scheduling-2] [] INFO  c.blog.analytics.service.impl.ScheduledServiceImpl - 开始执行每小时数据同步任务
+2025-12-19 17:05:00.077 [scheduling-2] [] INFO  c.blog.analytics.service.impl.AnalyticsServiceImpl - 开始同步Redis数据到MySQL
+2025-12-19 17:05:00.078 [scheduling-2] [] INFO  c.blog.analytics.service.impl.AnalyticsServiceImpl - Redis数据同步完成
+2025-12-19 17:05:00.079 [scheduling-2] [] INFO  c.blog.analytics.service.impl.ScheduledServiceImpl - 每小时数据同步任务执行完成
+2025-12-19 17:13:29.208 [lettuce-nioEventLoop-4-2] [] INFO  io.lettuce.core.protocol.CommandHandler - null Unexpected exception during request: java.net.SocketException: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-12-19 17:13:29.321 [lettuce-eventExecutorLoop-1-5] [] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was /175.178.115.82:6379
+2025-12-19 17:13:29.578 [lettuce-nioEventLoop-4-3] [] INFO  io.lettuce.core.protocol.ReconnectionHandler - Reconnected to 175.178.115.82/<unresolved>:6379
+2025-12-19 17:18:29.746 [lettuce-nioEventLoop-4-3] [] INFO  io.lettuce.core.protocol.CommandHandler - null Unexpected exception during request: java.net.SocketException: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-12-19 17:18:29.822 [lettuce-eventExecutorLoop-1-6] [] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was /175.178.115.82:6379
+2025-12-19 17:18:30.030 [lettuce-nioEventLoop-4-4] [] INFO  io.lettuce.core.protocol.ReconnectionHandler - Reconnected to 175.178.115.82/<unresolved>:6379
+2025-12-19 17:28:31.046 [lettuce-nioEventLoop-4-4] [] INFO  io.lettuce.core.protocol.CommandHandler - null Unexpected exception during request: java.net.SocketException: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-12-19 17:28:31.136 [lettuce-eventExecutorLoop-1-7] [] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was /175.178.115.82:6379
+2025-12-19 17:28:31.330 [lettuce-nioEventLoop-4-5] [] INFO  io.lettuce.core.protocol.ReconnectionHandler - Reconnected to 175.178.115.82/<unresolved>:6379
