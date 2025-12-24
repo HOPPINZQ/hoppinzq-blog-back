@@ -2,7 +2,7 @@ server:
   port: 9050
   ssl:
     key-store: classpath:hoppinzq.com.jks
-    key-password: hnj1js99ym
+    key-password: q72e8l77q979
     key-store-type: JKS
   servlet:
     context-path: /
