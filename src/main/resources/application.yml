@@ -1,7 +1,13 @@
 server:
   port: 9050
+  ssl:
+    key-store: classpath:hoppin.cn.jks
+    key-password: hnj1js99ym
+    key-store-type: JKS
   servlet:
     context-path: /
+http:
+  port: 9051
 
 spring:
   application:

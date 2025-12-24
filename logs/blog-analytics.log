@@ -204,3 +204,5 @@ java.net.SocketException: Connection reset
 	at java.base/java.lang.Thread.run(Thread.java:840)
 2025-12-19 17:28:31.136 [lettuce-eventExecutorLoop-1-7] [] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was /175.178.115.82:6379
 2025-12-19 17:28:31.330 [lettuce-nioEventLoop-4-5] [] INFO  io.lettuce.core.protocol.ReconnectionHandler - Reconnected to 175.178.115.82/<unresolved>:6379
+2025-12-19 17:40:08.210 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown initiated...
+2025-12-19 17:40:08.224 [SpringApplicationShutdownHook] [] INFO  com.zaxxer.hikari.HikariDataSource - BlogAnalyticsHikariCP - Shutdown completed.
