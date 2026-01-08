@@ -153,7 +153,7 @@ public class ProxyController {
     public HoppinResponse<Object> getLmRank(@RequestParam(required = false) Map<String, String> params) {
         try {
             // 构建请求URL
-            StringBuilder urlBuilder = new StringBuilder("https://hellogithub.com/_next/data/JdGrOpd-mbD4CLgVF9Yfl/zh/report/lm-rank.json");
+            StringBuilder urlBuilder = new StringBuilder("https://hellogithub.com/_next/data/5VHbH-v30LE2swvRWeOeP/zh/report/lm-rank.json");
             if (params != null && !params.isEmpty()) {
                 urlBuilder.append("?");
                 for (Map.Entry<String, String> entry : params.entrySet()) {
@@ -192,7 +192,7 @@ public class ProxyController {
     public HoppinResponse<Object> getTiobeRank(@RequestParam(required = false) Map<String, String> params) {
         try {
             // 构建请求URL
-            StringBuilder urlBuilder = new StringBuilder("https://hellogithub.com/_next/data/JdGrOpd-mbD4CLgVF9Yfl/zh/report/tiobe.json");
+            StringBuilder urlBuilder = new StringBuilder("https://hellogithub.com/_next/data/5VHbH-v30LE2swvRWeOeP/zh/report/tiobe.json");
             if (params != null && !params.isEmpty()) {
                 urlBuilder.append("?");
                 for (Map.Entry<String, String> entry : params.entrySet()) {
